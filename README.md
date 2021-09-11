@@ -1,2 +1,5 @@
 # Algorithm_study
-This repo will be updated every Saturday, until achieve platinum rank of Baekjoon
+알고리즘 스터디 - 백준 플래티넘 찍을때까지 !!  
+  
+##규칙
+1. 매 주 느슨한 토요일, 본인이 푼 알고리즘 문제와 다가올 한 주의 목표를 올린다.
