@@ -1,0 +1,5 @@
+import java.util.Scanner
+
+fun main() = with(Scanner(System.`in`)) { // A+B, A-B 문제랑 거의 똑같지만 전체 코드를 외워서 써본 것에 의미를 둠. 컴퓨터가 in을 예약어로 인식하지 않게끔 하기 위해 ` ` 로 감쌌는데 뭘로 감싸야 하는건지 키보드를 한참 들여다보다 겨우 알았다ㅋ 탭 키 위에 있다.
+    println(nextInt()*nextInt())
+}
