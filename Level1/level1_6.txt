@@ -1,0 +1,5 @@
+import java.util.*
+
+fun main(args: Array<String>) = with(Scanner(System.`in`)) { // 이번엔 with 문을 이용해 Scanner 객체를 본문이 식인 main 메서드로 활용해봤다. 코드 길이도 짧아지고 A+B 문제에 비해 시간도 훨씬 짧고  유용한 코드인 것 같다.
+    println(nextInt() - nextInt()) // 이 앞 문제인 A+B 답에서 약간 코드를 바꾸고 연산기호만 -로 바뀌었다. with 문을 이용해서 sc 프로퍼티 호출 없이도 nextInt() 메서드를 불러와 사용하는 방법에 대해 알 수 있었다.
+}
