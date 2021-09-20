@@ -1,0 +1,22 @@
+import java.io.*
+
+fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
+    
+    val score = readLine().toInt()
+    
+    if(90 <= score && 100 >= score) {
+        println("A")
+    }
+    else if(80 <= score && 89 >= score) {
+        println("B")
+    }
+    else if(70 <= score && 79 >= score) {
+        println("C")
+    }
+    else if(60 <= score && 69 >= score) {
+        println("D")
+    }
+    else {
+        println("F")
+    }
+}
