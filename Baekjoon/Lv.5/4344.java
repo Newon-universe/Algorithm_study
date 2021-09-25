@@ -31,7 +31,7 @@ public class Main {
 				}
 			}
 			
-			System.out.printf("%.3f%%\n",(count/n)*100);
+			System.out.printf("%.3f%%\n",(count / n) * 100);
 		}
 	}
 }
