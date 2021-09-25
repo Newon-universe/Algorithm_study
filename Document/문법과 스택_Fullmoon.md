@@ -118,11 +118,19 @@ public class ArrayTest {
 *후에 추가*
 
 ## 자료구조 - Stack
-### 개념
-<img src="Source/stack.png" width="450px" height="300px" title="스택의 구조" alt="스택의 구조"></img><br/>
--
--
--
+###  개념
+<img src="https://blog.kakaocdn.net/dn/bxNCzJ/btqFZywQnIJ/TlyeT9hjwuvEXKlKjlnR40/img.png" width="450px" height="300px" title="스택의 구조" alt="스택의 구조"></img><br/>
+
+리스트 자료구조의 특별한 경우 중 하나이다. <br>
+리스트 자료구조는 읽기, 삽입, 삭제를 리스트의 어느 곳에서나 할 수 있는 반면에 스택은 삽입과 삭제를 리스트의 한 쪽(__Top__)에서 행한다.
+<br>
+이를 LIFO(Last In First Out), 혹은 후입선출이라 한다.
+
+### 구현
+다음과 같이 연결리스트로 구현할 수 있다.
+```java
+
+```
 
 ### 시간복잡도
 -
@@ -143,4 +151,5 @@ public class ArrayTest {
 
 
 ## 참고 자료 및 링크
-[점프 투 자바](https://wikidocs.net/226)
+[점프 투 자바](https://wikidocs.net/226) <br>
+[스택(Stack)이란 by heejeong Kwon](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)
