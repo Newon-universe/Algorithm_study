@@ -5,8 +5,7 @@
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white">
 </span></br>
 
-백준 **플래티넘** 을 목표로 함께 달려가는 알고리즘 스터디 `플래 승급전 2승 2패`  
-<a href="https://accurate-market-4f8.notion.site/2-2-87ef6557d0464a1498dd59f5ddf42afe" Target="_blank" rel="noreferrer noopener">`노션`</a>
+백준 **플래티넘** 을 목표로 함께 달려가는 알고리즘 스터디 <a href="https://accurate-market-4f8.notion.site/2-2-87ef6557d0464a1498dd59f5ddf42afe" Target="_blank" rel="noreferrer noopener">`플래 승급전 2승 2패`  </a>
 </br>
 
 ## :space_invader: Role
