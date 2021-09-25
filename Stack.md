@@ -21,17 +21,32 @@
 - 그래서 1번째 데이터 삭제 - 2번째 데이터 삭제 - 3번째 데이터(맨 위로 올라옴) 읽기 와 같은 로직을 통해 '3번째 데이터를 읽어와' 라는 연산이 완료되므로, 이 경우 O(3)이 되는 것이다. 이런식으로 데이터를 읽어올 경우 연산횟수가 몇번이 될지는 랜덤이기 때문에 O(n) 이라는 시간복잡도로 표기를 하게 되는 것이다.
 
 
-### 로직
+### 로직 
+( 위의 pop, push 함수는 C 에서 사용하는 함수다. 여기서는 pop, push 와 같은 스택함수들을 코틀린으로 구현하여 설명해보려고 한다. 어차피 원리는 똑같다. )
 
-1. 
-2. 
-3. 
-
+코틀린에서는 완전히 C의 스택을 구현할 수 없으므로, 스택을 발전시킨 MutableList로 로직을 이해해보고자 한다. ( 자바의 Stack 라이브러리를 사용할 수도 있지만 프로그램이 많이 무겁다. )
 
 
+```kotlin
+ fun main() {
+    // stack
+    var mutableList = mutableListOf<Int>()
 
-```java
- // 풀이 코드
+    // push = add (삽입)
+    mutableList.add(1)
+    mutableList.add(2)
+    mutableList.add(3)
+
+    // pop = removeAt (삭제)
+    mutableList.removeAt(mutableList.size-1)
+
+    // isEmpty or isNotEmpty ( Boolean 타입으로 판단 )
+    println(mutableList.isEmpty())
+    println(mutableList.isNotEmpty())
+
+    // stack 크기
+    println(mutableList.size)
+}
 ```
 
 
@@ -44,19 +59,20 @@
 
 ### 단점
 
-- 데이터를 탐색하는데 있어 비효율적이다. (만약에 웹 페이지 스택이 100개 쌓여 있다고 한다면 첫번째 페이지로 가고 싶을 땐 뒤로가기를 99번이나 눌러야 한다. 개념에서 봤듯이 스택의 원리 때문에 원소를 하나하나 꺼내가면서 원하는 데이터에 도달해야 하기 때문이다. 최상단 스택의 데이터만 읽을 수 있기 때문.)
-- 
+- 데이터를 탐색하는데 있어 비효율적이다. 데이터를 자주 꺼내 읽어와야 하는 경우나 자주 삽입해야 하는 경우 많이 불편하다는 뜻이다. (만약에 웹 페이지 스택이 100개 쌓여 있다고 한다면 첫번째 페이지로 가고 싶을 땐 뒤로가기를 99번이나 눌러야 한다. 개념에서 봤듯이 스택의 원리 때문에 원소를 하나하나 꺼내가면서 원하는 데이터에 도달해야 하기 때문이다. 최상단 스택의 데이터만 읽을 수 있기 때문.)
 
 
 
 ### 결론
 
+- 스택만의 장단점이 있으므로, 스택에 적합한 자료관리일 경우에만 사용하는 것이 좋겠다.
 
 
 
 ### 참고
 https://www.youtube.com/watch?v=WB_BoAgWLNU&list=PLRx0vPvlEmdDHxCvAQS1_6XV4deOwfVrz&index=14&ab_channel=%EB%8F%99%EB%B9%88%EB%82%98
 https://velog.io/@choiiis/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue
+https://choheeis.github.io/newblog//articles/2020-10/kotlinStack
 
 
 
