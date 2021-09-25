@@ -6,7 +6,7 @@
 </span></br>
 
 백준 **플래티넘** 을 목표로 함께 달려가는 알고리즘 스터디 `플래 승급전 2승 2패`  
-<a href="https://accurate-market-4f8.notion.site/2-2-87ef6557d0464a1498dd59f5ddf42afe" target="_blank">`노션`</a>
+<a href="https://accurate-market-4f8.notion.site/2-2-87ef6557d0464a1498dd59f5ddf42afe" onclick="window.open(this.href);return false;" rel="noreferrer noopener">`노션`</a>
 </br>
 
 ## :space_invader: Role
@@ -29,13 +29,13 @@
   <tr>
     <td align="center"><a href="https://github.com/Newon-universe/"><img src="https://avatars.githubusercontent.com/u/80164141?v=4?s=100" width="150px;"/><br/><sub><b>Newon</b></sub></a><br/><a href="#" title="Leader">🚀</a><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=Newon-universe" title="Contributions">💻</a></td>
     <td align="center"><a href="https://github.com/lsy91"><img src="https://avatars.githubusercontent.com/u/75516061?v=4?s=100" width="150px;"/><br/><sub><b>Sol</b></sub></a><br/><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=lsy91" title="Contributions">💻</a></td>
-    <td align="center"><a href="https://github.com/uunwon"><img src="https://avatars.githubusercontent.com/u/48541984?v=4?s=100" width="150px;"/><br/><sub><b>Sally</b></sub></a><br/><a href="https://uunwon.tistory.com/" title="Blog">📚</a><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=uunwon" title="Contributions">💻</a></td>
+    <td align="center"><a href="https://github.com/uunwon"><img src="https://avatars.githubusercontent.com/u/48541984?v=4?s=100" width="150px;"/><br/><sub><b>Sally</b></sub></a><br/><a href="https://uunwon.tistory.com/" title="Blog">📚</a><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=uunwon" title="Contributions" rel="noreferrer noopener">💻</a></td>
     <td align="center"><a href="https://github.com/xoxeez"><img src="https://avatars.githubusercontent.com/u/52715471?v=4?s=100" width="150px;"/><br/><sub><b>Sony</b></sub></a><br/><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=xoxeez" title="Contributions">💻</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/eunyoung23"><img src="https://avatars.githubusercontent.com/u/70764912?v=4?s=100" width="150px;"/><br/><sub><b>Ellina</b></sub></a><br/><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=eunyoung23" title="Contributions">💻</a></td>
     <td align="center"><a href="https://github.com/SoYeonKim522"><img src="https://avatars.githubusercontent.com/u/87492707?v=4?s=100" width="150px;"/><br/><sub><b>Liali</b></sub></a><br/><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=SoYeonKim522" title="Contributions">💻</a></td>
-    <td align="center"><a href="https://github.com/jiyoondev"><img src="https://avatars.githubusercontent.com/u/80487426?v=4?s=100" width="150px;"/><br/><sub><b>Fullmoon</b></sub></a><br/><a href="https://velog.io/@keepcalm" title="Blog">📚</a><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=jiyoondev" title="Contributions">💻</a></td>
+    <td align="center"><a href="https://github.com/jiyoondev"><img src="https://avatars.githubusercontent.com/u/80487426?v=4?s=100" width="150px;"/><br/><sub><b>Fullmoon</b></sub></a><br/><a href="https://velog.io/@keepcalm" title="Blog">📚</a><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=jiyoondev" title="Contributions" rel="noreferrer noopener">💻</a></td>
     <td align="center"><a href="https://github.com/jtrm156"><img src="https://avatars.githubusercontent.com/u/42407740?v=4?s=100" width="150px;"/><br/><sub><b>Blanco</b></sub></a><br/><a href="https://github.com/Newon-universe/Algorithm_study/commits?author=jtrm156" title="Contributions">💻</a></td>
   </tr>
 </table>
