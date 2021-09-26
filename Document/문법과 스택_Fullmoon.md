@@ -1,5 +1,5 @@
 # WEEK 1 : 문법과 스택
-> Java의 기본 문법을 정리해보자! 🔥🔥 🧑‍🚒🚒 
+> Java의 기본 문법과 스택을 정리해보자! 🔥🔥 🧑‍🚒🚒 
 ## 입출력
 ```java
 public class IOTest {
@@ -126,12 +126,6 @@ public class ArrayTest {
 <br>
 이를 LIFO(Last In First Out), 혹은 후입선출이라 한다.
 
-### 구현
-다음과 같이 연결리스트로 구현할 수 있다.
-```java
-
-```
-
 ### 시간복잡도
 
 삭제 및 삽입 : 맨 위에 데이터를 삽입하거나 삭제하기 때문에 늘 O(1) <br>
@@ -143,11 +137,135 @@ public class ArrayTest {
 
 #### 단점
 + 일반적으로 구현 시 데이터 최대 개수를 미리 정해야 한다
-+ 따라서 미리 저장공간을 확보해야 하므로 저장 공간의 낭비가 발생할 수 있다
++ 따라서 미리 저장공간을 확보해야 하므로 저장 공간의 낭비가 발생할 수 있다.
+
+### 구현
+배열과 연결리스트로 구현할 수 있다.
+<br> 먼저 자바에서 배열로 구현한 스택을 살펴보자.
+
+```java
+interface Stack{
+  boolean isEmpty();
+  boolean isFull();
+  void push(char item);
+  char pop();
+  char peek();
+  void clear();
+}
+public class ArrayStack implements Stack {
+
+  private int top;
+  private int stackSize;
+  private char stackArr[];
+
+  // 스택을 생성하는 생성자
+  public ArrayStack(int stackSize) {
+    top = -1;    // 스택 포인터 초기화
+    this.stackSize = stackSize;    // 스택 사이즈 설정
+    stackArr = new char[this.stackSize];    // 스택 배열 생성
+  }
+
+  // 스택이 비어있는 상태인지 확인
+  public boolean isEmpty() {
+    // 스택 포인터가 -1인 경우 데이터가 없는 상태이므로 true 아닌 경우 false를 return
+    return (top == -1);
+  }
+
+  // 스택이 가득찬 상태인지 확인
+  public boolean isFull() {
+    // 스택 포인터가 스택의 마지막 인덱스와 동일한 경우 true 아닌 경우 false를 return
+    return (top == this.stackSize-1);
+  }
+
+  // 스택에 데이터를 추가
+  public void push(char item) {
+    if(isFull()) {
+      System.out.println("Stack is full!");
+    } else {
+      stackArr[++top] = item;    // 다음 스택 포인터가 가리키는 인덱스에 데이터 추가
+      System.out.println("Inserted Item : " + item);
+    }
+  }
+
+  // 스택의 최상위(마지막) 데이터 추출 후 삭제
+  public char pop() {
+    if(isEmpty()) {
+      System.out.println("Deleting fail! Stack is empty!");
+      return 0;
+    } else {
+      System.out.println("Deleted Item : " + stackArr[top]);
+      return stackArr[top--];
+    }
+  }
+
+  // 스택의 최상위(마지막) 데이터 추출
+  public char peek() {
+    if(isEmpty()) {
+      System.out.println("Peeking fail! Stack is empty!");
+      return 0;
+    } else {
+      System.out.println("Peeked Item : " + stackArr[top]);
+      return stackArr[top];
+    }
+  }
+
+  // 스택 초기화
+  public void clear() {
+    if(isEmpty()) {
+      System.out.println("Stack is already empty!");
+    } else {
+      top = -1;    // 스택 포인터 초기화
+      stackArr = new char[this.stackSize];    // 새로운 스택 배열 생성
+      System.out.println("Stack is clear!");
+    }
+  }
+
+  // 스택에 저장된 모든 데이터를 출력
+  public void printStack() {
+    if(isEmpty()) {
+      System.out.println("Stack is empty!");
+    } else {
+      System.out.print("Stack elements : ");
+      for(int i=0; i<=top; i++) {
+        System.out.print(stackArr[i] + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  public static void main(String args[]) {
+    int stackSize = 5;
+    ArrayStack arrStack = new ArrayStack(stackSize);
+
+    arrStack.push('A');
+    arrStack.printStack();
+
+    arrStack.push('B');
+    arrStack.printStack();
+
+    arrStack.push('C');
+    arrStack.printStack();
+
+    arrStack.pop();
+    arrStack.printStack();
+
+    arrStack.pop();
+    arrStack.printStack();
+
+    arrStack.peek();
+    arrStack.printStack();
+
+    arrStack.clear();
+    arrStack.printStack();
+  }
+
+}
+```
 
 
 
 ## 참고 자료 및 링크
 [점프 투 자바](https://wikidocs.net/226) <br>
 [스택(Stack)이란 by heejeong Kwon](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html) <br>
-[스택, 큐 by sbinha](https://velog.io/@sbinha/%EC%8A%A4%ED%83%9D-%ED%81%90)
+[스택, 큐 by sbinha](https://velog.io/@sbinha/%EC%8A%A4%ED%83%9D-%ED%81%90) <br>
+[FREESTROKES DEVLOG](https://freestrokes.tistory.com/82) 

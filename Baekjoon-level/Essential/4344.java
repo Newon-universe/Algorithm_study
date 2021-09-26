@@ -27,7 +27,7 @@ public class Main {
             int N = Integer.parseInt(st.nextToken());
             /* nextToken()은 다음 토큰을 불러오는 메소드이다 */
             arr = new int[N];
-            /* 다음 토큰을 불러와서 배열에 넣어준다 */
+            /* N(개수)의 길이만큼의 int 배열을 만들어준다 */
 
             double sum = 0;
             /* double은 소수점 14자리까지 표현할 수 있는 실수형 타입이다 */
@@ -35,8 +35,9 @@ public class Main {
             for (int j=0; j<N; j++) {
                 int score = Integer.parseInt(st.nextToken());
                 arr[j] = score;
+                /* 성적을 배열에 넣어준다 */
                 sum += score;
-                /* 학생들의 성적을 배열에 저장하고 성적의 합을 구한다 */
+                /* 성적의 합을 구한다 */
             }
             double avg = (sum/N);
             double count = 0;
@@ -48,7 +49,7 @@ public class Main {
                 }
             }
             System.out.printf("%.3f%%\n",(count/N)*100);
-            /* %.3f로 포맷 출력을 지정해서 소수점 셋째 자리까지 출력 + % + %\n 은 줄바꿈 */
+            /* %.3f로 포맷 출력을 지정해서 소수점 셋째 자리까지 출력 + %%로 퍼센트 표시 + \n 은 줄바꿈 */
         }
 
     }
