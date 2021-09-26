@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         sc.close();
-        /* 스캐너를 이용하여 입출력했다 */
+        /* 스캐너를 통해 입력을 받았다 */
 
         if (n < 100) {
             System.out.println(n);

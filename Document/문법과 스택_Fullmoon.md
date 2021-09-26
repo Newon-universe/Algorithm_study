@@ -133,23 +133,21 @@ public class ArrayTest {
 ```
 
 ### 시간복잡도
--
--
+
+삭제 및 삽입 : 맨 위에 데이터를 삽입하거나 삭제하기 때문에 늘 O(1) <br>
+데이터 검색 : 특정 데이터를 찾을 때까지 수행해야 하므로 O(n)
 
 #### 장점
-
--
--
-
-
++ 구조가 단순하며 구현이 쉽다.
++ 데이터 저장/조회/삭제의 속도가 빠르다.
 
 #### 단점
-
--
--
++ 일반적으로 구현 시 데이터 최대 개수를 미리 정해야 한다
++ 따라서 미리 저장공간을 확보해야 하므로 저장 공간의 낭비가 발생할 수 있다
 
 
 
 ## 참고 자료 및 링크
 [점프 투 자바](https://wikidocs.net/226) <br>
-[스택(Stack)이란 by heejeong Kwon](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)
+[스택(Stack)이란 by heejeong Kwon](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html) <br>
+[스택, 큐 by sbinha](https://velog.io/@sbinha/%EC%8A%A4%ED%83%9D-%ED%81%90)
