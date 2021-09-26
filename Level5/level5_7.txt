@@ -4,7 +4,7 @@ import java.util.*
 fun main() {
 	val br = System.`in`.bufferedReader()
 
-	val arr = IntArray(1_001)
+	val arr = IntArray(1001)
 	var testCase = br.readLine().toInt()
 
 	var sum: Double
