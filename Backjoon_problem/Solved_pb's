@@ -467,6 +467,7 @@ fun main(){
 
     /* 1065번
     val br = System.`in`.bufferedReader()
+    val bw = System.`out`.bufferedWriter()
 
     val s = br.readLine()!!.toInt()
     var answer = 0
@@ -488,6 +489,45 @@ fun main(){
         }
     }
     println(answer)
+    */
+
+    /* 4344번
+    val br = System.`in`.bufferedReader()
+    val bw = System.`out`.bufferedWriter()
+
+    val arr = IntArray(1_001)
+    var N = br.readLine().toInt()
+
+    var sum: Double
+    var avg: Double
+    var count: Double
+    var result: Double
+
+    for (i in 0 until N) {
+        sum = 0.0
+        avg = 0.0
+        count = 0.0
+        val stringToken = StringTokenizer(br.readLine())
+
+        var i:Int = 0
+        while(stringToken.hasMoreTokens()) {
+            arr[i] = stringToken.nextToken().toInt()
+            i++
+        }
+
+        for (j in 1..arr[0]){
+            sum += arr[j]
+            avg = sum / arr[0]
+        }
+
+        for (j in 1..arr[0]) {
+            if (arr[j] > avg) {
+                count++
+            }
+        }
+        result = count / arr[0] * 100
+        println("${String.format("%.3f", result)}%")
+    }
     */
 }
 
