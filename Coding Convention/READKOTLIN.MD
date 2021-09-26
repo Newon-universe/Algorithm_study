@@ -308,6 +308,6 @@ if (a == 2) {
 </br>
 
 > ###### 참고자료
-> - <href="https://kotlinlang.org/docs/coding-conventions.html#documentation-comments"> Coding Conventions - kotlinlang.org</a>
-> - <href="https://developer.android.com/kotlin/style-guide?hl=ko#formatting">Kotlin 스타일 가이드 - Android for Developers</a>
-> - <href="https://velog.io/@leyuri/표기법-스네이크-케이스-파스칼-케이스-카멜-케이스"> 표기법 - 스네이크 케이스, 파스칼 케이스, 카멜 케이스 - leyuri Velog </a>
+> - <a href="https://kotlinlang.org/docs/coding-conventions.html#documentation-comments"> Coding Conventions - kotlinlang.org</a>
+> - <a href="https://developer.android.com/kotlin/style-guide?hl=ko#formatting">Kotlin 스타일 가이드 - Android for Developers</a>
+> - <a href="https://velog.io/@leyuri/표기법-스네이크-케이스-파스칼-케이스-카멜-케이스"> 표기법 - 스네이크 케이스, 파스칼 케이스, 카멜 케이스 - leyuri Velog </a>
