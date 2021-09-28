@@ -35,7 +35,7 @@ for (i 2..N/2) {
 ```kotlin
 import kotlin.math.*
 
-val N = 16.toDouble()
+val N: Double = readLine()
 val sqrtN = sqrt(N).toInt()
 var NisPrime = true
 
@@ -47,7 +47,7 @@ var NisPrime = true
 	println(NisPrime)
   
 /*
-*   여기서 sqrt 는 toInt() 를 이용해서 내림으로 구현하였으며, 
+*   여기서 sqrtN 은 toInt() 를 이용해서 내림으로 구현하였으며, 
 *   math 를 import 하지 않을 시 다음과 같이 구현이 가능하다.
 *
 *   @sqrtLoop for (i in 2..N) {
@@ -55,32 +55,99 @@ var NisPrime = true
 *                   break@sqrtLoop
 *                 }
 *              }
+*             if (i * i > N) {
+*                 i--
+*             }
+*             sqrtN = i
 *
 */
 ```
+</br>
 
 #### ◾ 에라토스테네스의 체
-1. 
-2. 
-3. 
+<img src="https://blog.kakaocdn.net/dn/47gsG/btqGmOMVuzk/Kp5rTFrj8R2Rj7rf4wfxF1/img.gif">
+<Strong>개념</Strong> ﾠﾠﾠ2부터 N 중에서 여러개의 소수를 찾거나 판별해야할 때 사용되는 기법 중 하나이다.</br>
+</br>
+<Strong>로직</Strong>ﾠﾠ ﾠ① 1 ~ N 이 들어가있는 배열을 선언한 후, 2의 배수들을 전부 제거한다.</br>
+	ﾠﾠﾠﾠﾠﾠﾠ② N까지의 2의 배수가 전부 제거되면 2에 1을 더한 후, 해당 숫자가 제거되어있지 않다면 그 배수들을 전부 제거한다.</br>
+        ﾠﾠﾠﾠﾠﾠﾠ③ 이전단계를 N까지 반복한다.</br>
+	ﾠﾠﾠﾠﾠﾠﾠ④ 배열에서 제거되지 않은 수들은 소수이다.</br>
+</br>
+
+> 에라토스테네스의 체는 현존하는 다수의 소수판별법 중에서 프로그래밍적으로 가장 적은 시간복잡도를 갖는다.
+
+</br>
 
 ```kotlin
- // 풀이 코드
+
+fun eratosSieve(N:Int, eratos:Array<Int>) {
+    var i = 2
+    var j = i
+    
+    for (i in i .. N) {
+        if (eratos[i] == 0) {
+	    continue
+	}
+        
+	j = i * 2
+        for (j in j .. N step j/2) {
+             if (eratos[j] != 0) {
+	            eratos[j] = 0
+	     }
+        }
+    }
+}
+
+fun main() {
+    val N = readLine().toInt()
+    var eratos = Array<Int>(N+1) { i -> i }
+    
+    eratosSieve(N, eratos)
+}
+
+// 배열에 소수만 남기는 형태로, 소수 유무로 출력하고 싶다면 배열을 Boolean 타입으로 작성하면 된다.
 ```
 
 #### ◾ 시간 복잡도
-> 기본 로직과 에라토스테네스의 체 각각의 시간복잡도에 대해 서술  
+##### N 이 소수인지 판별하는 알고리즘의 시간복잡도
+- 정의에 따른 소수판별의 시간 복잡도는 O(N)</br>
+- 특징 1에 따른 소수판별의 시간 복잡도는 O(N/2)</br>
+- 특징 2에 따른 소수판별의 시간 복잡도는 O(루트 N)</br>
+
+##### N 까지의 숫자들이 소수인지 판별하는 알고리즘의 시간복잡도
+- 특징 2에 따른 다수의 소수 찾기 시간 복잡도는 O(N * 루트 N)</br>
+- 에라토스테네스의 체에 따른 다수의 소수 찾기 시간 복잡도는 O(N * log(logN))</br>
 
 </br>
 
 ### 다이나믹 프로그래밍
 #### ◾ 개념
+큰 문제를 작은 단위로 나누어서 푸는 알고리즘을 총칭하는 용어</br>
 
 #### ◾ 조건  
-**1. 첫번째 조건**  
-> 첫번째 조건에 대한 설명  
+**1. 첫번째 조건**</br> 
+ﾠﾠ**부분 반복 문제 (Overlapping Subproblem)**
+- 큰 문제를 작은 단위로 나누었을 때, `작은 단위로 나누어진 문제들은 같은 정답`의 형태가 되어야 한다.</br>
+- 즉 큰 문제를 나눌 때, 항상 새로운 문제를 생성하는 것이 아닌 계속해서 `같은 문제가 여러번 재사용되는 구조`를 보여야한다.</br>
+- 대표적인 예시가 피보나치 수열로, 다음 수열 = `이전 수열 + 그 이전 수열의 합`의 형태가 반복됨을 알 수 있다.</br>
 
-**2. 두번째 조건**  
+```
+문제: N번째 피보나치 수를 구하는 문제
+작은 문제: N-1번째 피보나치 수를 구하는 문제, N-2번째 피보나치 수를 구하는 문제
+
+문제: N-1번째 피보나치 수를 구하는 문제
+작은 문제: N-2번째 피보나치 수를 구하는 문제, N-3번째 피보나치 수를 구하는 문제
+
+문제: N-2번째 피보나치 수를 구하는 문제
+작은 문제: N-3번째 피보나치 수를 구하는 문제, N-4번째 피보나치 수를 구하는 문제
+```
+
+</br>
+
+**2. 두번째 조건**</br>
+ﾠﾠ**최적 부분 구조 (Optimal Substructure)**</br>
+- 작은 부분에서 구한 최적의 답으로 큰 문제의 최적의 답을 구할 수 있어야 한다.
+- 
 
 #### ◾ 메모이제이션(Memoization) 이란?
 
@@ -102,7 +169,8 @@ var NisPrime = true
 </br>
 
 ### 각주
-<a name="footnote_1">1_역수</a>: 그 수와 서로 곱한 결과가 1인 수, 즉 분자와 분모를 바꾼 수
+<a name="footnote_1">(1) 역수</a>: 그 수와 서로 곱한 결과가 1인 수, 즉 분자와 분모를 바꾼 수
 
 ### 참고
 [이런 식으로 참고한 사이트를 넣어요](https://github.com/Newon-universe/Algorithm_study)  
+https://defian.tistory.com/entry/알고리즘-에라토스테네스의-체-C-소수-찾기
