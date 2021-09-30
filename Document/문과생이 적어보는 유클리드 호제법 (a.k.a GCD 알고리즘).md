@@ -16,7 +16,7 @@
 이를 간단하게 코드로 작성하면 다음과 같이 나타난다. <br/>
 ```Kotlin
 
-fun GcdCalculator(a:Int, b:Int):Int {
+fun Gcd(a:Int, b:Int):Int {
     var r = a % b
     if (r == 0)
        return b
@@ -28,7 +28,7 @@ fun main() {
     val br = System.`in`.bufferedReader()
     val (a,b) = br.readLine().split(' ').map {it.toInt()}
     
-    var gcd = GcdCalculator(a,b)
+    var gcd = Gcd(a,b)
     println(gcd)                                               // a 와 b 의 최대공약수
     println(a*b/gcd)                                           // a 와 b 의 최소공배수
     
@@ -103,8 +103,8 @@ src="https://i.ibb.co/6g18SfS/Kakao-Talk-Photo-2021-09-30-20-47-35.gif" width="2
 <br/>
 
 그럼, 𝒹´의 관점에서 b 와 𝛾를 다시 써보자.<br/>
-> b = 𝒹´ * b´ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ//ﾠﾠb´은  b = 𝒹´ * b´ 를 만족하는 임의의 수<br/>
-> 𝛾 = 𝒹´ * r´ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ//ﾠﾠr´은 𝛾 = 𝒹´ * r´를 만족하는 임의의 수<br/>
+> b = 𝒹´ * b´ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ//ﾠﾠb´은  b = 𝒹´ * b´ 를 만족하는 수<br/>
+> 𝛾 = 𝒹´ * r´ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ//ﾠﾠr´은 𝛾 = 𝒹´ * r´를 만족하는 수<br/>
 <br/>
 
 이걸 위에서 사용했던 `a = q * b + 𝛾`ﾠﾠﾠ에 대입해보자. <br/>
@@ -130,12 +130,13 @@ src="https://i.ibb.co/6g18SfS/Kakao-Talk-Photo-2021-09-30-20-47-35.gif" width="2
 <br/>
 
 따라서 우리는 `a 와 b 와 𝛾 의 최대공약수가 𝒹로 같다.` 는 이야기가 동화인 줄 알았지만 <br/>
-사실 팩트기반 실제 사례 기반 수필로써 `핵심주제 ① : a 와 b 와 𝛾 의 최대공약수가 𝒹로 같다.` 가 True임을 알 수 있었다. 올ㅋ<br/>
+사실 팩트기반 실제 사례 기반 수필로써 `핵심주제 ① : a 와 b 와 𝛾 의 최대공약수가 𝒹로 같다.` 가 True임을 알 수 있었다.<br/>
 
 ---
 ### ㅇㅋ, 근데 왜 a 와 b 와 𝛾 의 최대공약수가 같다고 그걸 저렇게 반복해도 성립하는거임?
-그렇다, 우리가 `a 와 b 와 𝛾 의 최대공약수가 𝒹로 같다.` 라는 팩트를 갖고 있어도 <br/>
+그렇다, 우리가 `핵심 주제 ① : a 와 b 와 𝛾 의 최대공약수가 𝒹로 같다.` 라는 팩트를 갖고 있어도 <br/>
 우리는 코틀린 예제로 쓰인 저 코드가 잘 작동하게 되는 이유를 아직 찾지 못했다.<br/>
+<br/>
 <img 
 src="https://postfiles.pstatic.net/MjAyMDA2MjZfMTg2/MDAxNTkzMTYzMTAxNzEz.2ZOU95zPr-Yf7OWs9Iy_qCnvEhVKm2dXLkhaBXATNtUg.8ZPKSf1bE8wpKfN1uR3aXVzZv9YIfl6q2aB3cKgeh84g.GIF.c_blub/48C5FAA5-5FDB-421A-95EA-331A34587FA5.gif?type=w966" width="200" height="200"/>
 <br/>
@@ -143,7 +144,7 @@ src="https://postfiles.pstatic.net/MjAyMDA2MjZfMTg2/MDAxNTkzMTYzMTAxNzEz.2ZOU95z
 코드를 다시 한번 살펴보자
 ```Kotlin
 
-fun GcdCalculator(a:Int, b:Int):Int {
+fun Gcd(a:Int, b:Int):Int {
     var r = a % b
     if (r == 0)
        return b
@@ -152,13 +153,13 @@ fun GcdCalculator(a:Int, b:Int):Int {
 }
 { ... }
 ```
-GcdCalculator() 는 나머지 𝛾 이 0이 될 때 모든 연산을 끝내게 된다.<br/>
+Gcd() 는 나머지 𝛾 이 0이 될 때 모든 연산을 끝내게 된다.<br/>
 다시 말하면 𝛾 은 유한한 횟수 안에 언젠가 0 된다는 것이다.<br/> 
 언젠가는 나머지가 0이 된다라는걸 확신하는 듯한 저 표정이 거만하기 짝이 없다. 저게 블러핑인지 아닌지 한번 확인해보자. <br/>
 <br/>
 <br/>
 `a / b 의 나머지가 𝛾` 이듯, `b / 𝛾 의 나머지가 𝛾´` 라고 말해보자.<br/>
-`밝혀진 진실 ① = 𝒹 는 𝛾의 최대공약수임` 에 따라서 `gcd(a, b) = gcd(b, 𝛾)` 이듯 `gcd(b, 𝛾) 은 gcd(𝛾, 𝛾´)` 이다.<br/>
+`핵심 주제 ① = 𝒹 는 a와 b 와 𝛾의 최대공약수임` 에 따라서 `gcd(a, b) = gcd(b, 𝛾)` 이듯 `gcd(b, 𝛾) 은 gcd(𝛾, 𝛾´)` 이다.<br/>
 <br/>
 ..어 왜?
 <br/>
@@ -182,11 +183,6 @@ GcdCalculator() 는 나머지 𝛾 이 0이 될 때 모든 연산을 끝내게 �
 <br/>
 
 오, 그렇다면 `𝛾´ 과 𝛾´´` 사이에도 `최대공약수는 𝒹` 이고 `𝛾´´ 과 𝛾´´´` 에도 `최대공약수는 𝒹` 이고 `𝛾´´´ 과 𝛾´´´´` 에도 `𝒹` 이고 `{ ... }` 에도 `𝒹`  <br/>
-와우 ! 친구들, 빢빢이 아저ㅆ.. 가 아니라 거의 다 왔다 조금만 힘내자 !!<br/>
-<br/>
-<img 
-src="https://t1.daumcdn.net/cafeattach/Uzlo/a84f80ea1fc05e3b277dca1320dbca72e6b9ec2e" width="200" height="200"/>
-<br/>
 <br/>
 <br/>
 무한한 나머지와 그 나머지의 최대공약수는 언제나 a 와 b 의 최대공약수와 같다는 건 알겠지만, 혹시 `𝛾´´´´´´{...}`가 0이 안되면 어떻게 될까?? <br/>
@@ -223,7 +219,7 @@ src="https://blog.kakaocdn.net/dn/b7Rey8/btqExZC771a/cZofK59sF1KN00Exlz3sWK/img.
 마지막으로 코드를 다시 한번 살펴보면
 ```Kotlin
 
-fun GcdCalculator(a:Int, b:Int):Int {
+fun Gcd(a:Int, b:Int):Int {
     var r = a % b
     if (r == 0)
        return b
@@ -243,14 +239,15 @@ fun GcdCalculator(a:Int, b:Int):Int {
 ### 결론
 유클리드 호제법을 통해 우리는 다음과 같이
 - `핵심주제 ① : a 와 b 와 𝛾 의 최대공약수가 𝒹로 같다.`
-- `핵심주제 ② = crazy_𝛾은 언젠가는 0이 될 수 밖에 없다`<br/>
+- `핵심주제 ② : crazy_𝛾은 언젠가는 0이 될 수 밖에 없다`<br/>
+
 가 성립함을 알 수 있었고, 이에 따라 Gcd(최대공약수)를 구하는, 소위 나머지 알고리즘라는 것이 성립함을 알 수 있었다. <br/>
 <br/>
 
 즉 정수 `a`, `b`, `𝛾` 이 있을 때<br/>
 
 ```Kotlin
-fun GcdCalculator(a:Int, b:Int):Int {
+fun Gcd(a:Int, b:Int):Int {
     var r = a % b
     if (r == 0)
        return b
