@@ -170,8 +170,26 @@ fun main() {
 
 다수의 피보나치 수열 출력을 다이나믹 프로그래밍으로 푼 예시이다.
 ```Kotlin
+/* 
+*  하단의 Top-down, Bottom-up 의 예시들이 메모리제이션의 예시들이다.
+*  즉 같은 반복을 피하기 위해 배열 등에 저장하는 기법을 일컫는다.
+*  하단의 코드들은 메모리제이션을 **쓰지 않고** 피보나치를 구할 때 방식이다.
+*/
 
+fun fibonacci(N: Int){
+   if (n == 0) {
+      return 0
+   } else if (n == 1) {
+      return 1
+   }
+   
+   return fibonacci(n-1) + fibonacci(n-2)
+}
 
+fun main() {
+    val N = readLine().toInt()
+    fibonacci(N)                       // N 번째 피보나치 수 구하기
+}
 ```
 
 #### ◾ 분할 정복 방식과의 차이점
@@ -203,7 +221,17 @@ fun main () {
 For 문을 통해서 0에서부터 다음 피보나치 수열을 찾으며, 원하는 N의 피보나치 수열이 나올 때 까지 진행하는 로직이 대표적 예시이다.
 
 ```Kotlin
+# 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
+dp = [0] * 100
+dp[1] = 1
+dp[2] = 1
+n = 99
 
+# 피보나치 수열 반복문으로 구현(Bottom-Up DP)
+for i in range(3, n + 1):
+    dp[i] = dp[i - 1] + dp[i - 2]
+
+print(dp[n])
 ```
 
 </br>
