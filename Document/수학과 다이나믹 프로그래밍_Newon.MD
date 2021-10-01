@@ -14,7 +14,7 @@
 
 #### ◾ 기본 로직
 ##### 1. 어떤 자연수로 N이 나누어지는지 확인 -- 정의 
-정석, 단 N 까지 모든 수를 확인하므로 O(N) 만큼 걸리는 느린 로직.<br/>
+정석, 단 N 까지 모든 수를 확인하므로 `O(N)` 만큼 걸리는 느린 로직.<br/>
 
 ```kotlin
 for (i 2..N-1) {
@@ -26,8 +26,8 @@ for (i 2..N-1) {
 
 ##### 2. N/2 보다 작거나 같은 자연수로 N이 나누어지는지 확인 -- 특징 1
 정의의 시간복잡도를 절반으로 나누는 로직.<br/>
-어떠한 소수가 아닌 자연수가 있을 때, 두 인수는 대칭을 이루며, 그 기준은 `N / 2` 지점이다.<br/>
-따라서 N의 약수는 반드시 `2 / N` 안에 존재한다. 시간복잡도는 O(N/2) <br/>
+- 어떠한 소수가 아닌 자연수가 있을 때, 두 인수는 대칭을 이루며, 그 기준은 `N / 2` 지점이다.
+- 따라서 N의 약수는 반드시 `2 / N` 안에 존재한다. 시간복잡도는 `O(N/2)` <br/>
 
 ```kotlin
 for (i 2..N/2) {
@@ -39,8 +39,9 @@ for (i 2..N/2) {
 
 ##### 3. 루트 N 보다 작거나 같은 자연수로 N이 나누어지는지 확인 -- 특징 2
 어떠한 소수가 아닌 홀수 자연수 N이 있을 때, `루트 N` * `루트 N` 을 통해 N을 만들 수 있으므로, <br/>
-N 의 약수는 반드시 `2 ~ 루트 N` 사이에 존재한다. 시간복잡도는 O(루트 N) <br/>
-참고로 짝수는 무조건 2로 나누어지니 소수는 반드시 홀수에만 존재한다. <br/>
+N 의 약수는 반드시 `2 ~ 루트 N` 사이에 존재한다. 시간복잡도는 `O(루트 N)` <br/>
+<br/>
+*참고로 짝수는 무조건 2로 나누어지니 소수는 반드시 홀수에만 존재한다.* <br/>
 
 ```kotlin
 import kotlin.math.*
@@ -250,12 +251,11 @@ print(dp[n])
 <a name="footnote_1">(1) 역수</a>: 그 수와 서로 곱한 결과가 1인 수, 즉 분자와 분모를 바꾼 수
 
 ### 참고
-[이런 식으로 참고한 사이트를 넣어요](https://github.com/Newon-universe/Algorithm_study)  
-https://defian.tistory.com/entry/알고리즘-에라토스테네스의-체-C-소수-찾기
-
-https://galid1.tistory.com/507
-https://velog.io/@gillog/동적-계획법Dynamic-Programming
-https://velog.io/@polynomeer/동적-계획법Dynamic-Programming
-https://codeinleonis.tistory.com/28?category=801279
-
-brain from 감자 4호 
+[알고리즘 에라토스테네스의 체 (C++) - 소수 찾기](https://defian.tistory.com/entry/알고리즘-에라토스테네스의-체-C-소수-찾기)<br/>
+<br/>
+[알고리즘 - Dynamic Programming (동적 프로그래밍)이란?](https://galid1.tistory.com/507)<br/>
+[동적 계획법(Dynamic Programming)](https://velog.io/@gillog/동적-계획법Dynamic-Programming)      // 서로 다른 작성자<br/>
+[동적 계획법(Dynamic Programming)](https://velog.io/@polynomeer/동적-계획법Dynamic-Programming)  // 서로 다른 작성자<br/>
+[동적 계획법( DP - Dynamic Programming ), 메모이제이션( Memoization )](https://codeinleonis.tistory.com/28?category=801279)<br/>
+<br/>
+brain from 감자 4호 <br/>
