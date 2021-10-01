@@ -58,6 +58,25 @@ fun main() {
 
 ```kotlin
  // 풀이 코드
+ /* 시간복잡도 : O(N log(log N)) */
+ fun main() {
+    val br = System.`in`.bufferedReader()
+    val prime = BooleanArray(1001, {true}) //1)
+    prime[0] = false
+    prime[1] = false
+    
+   for (i in 2..1000) {
+       if (prime[i]) {
+          for (j in 2 * i..1000 step i) {
+              prime[j] = false
+              // 2) 소수의 배수들을 싹다 false 처리
+          }
+    }
+    
+    for (i in 2..1000) {
+        if(prime[i] == true) print("${i}")
+    }
+}
 ```
 
 #### ◾ 시간 복잡도
