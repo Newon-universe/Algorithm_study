@@ -179,7 +179,7 @@ int bottomUp(int n)
 </br>
 
 ### 참고
-[Stranger's Lab](https://st-lab.tistory.com/81)  
-[안경잡이 개발자](https://blog.naver.com/PostView.naver?blogId=ndb796&logNo=221233595886&redirect=Dlog&widgetTypeCall=true&directAccess=false)
-[에브리 저장소](https://eblee-repo.tistory.com/27)
+[Stranger's Lab](https://st-lab.tistory.com/81)  <br>
+[안경잡이 개발자](https://blog.naver.com/PostView.naver?blogId=ndb796&logNo=221233595886&redirect=Dlog&widgetTypeCall=true&directAccess=false) <br>
+[에브리 저장소](https://eblee-repo.tistory.com/27) <br>
 [Dev Cristoval](https://data-make.tistory.com/384)
