@@ -111,10 +111,11 @@ N보다 작은 자연수들로 모두 나눠본다.
 
 #### ◾ 메모이제이션(Memoization) 이란?
 컴퓨터가 동일한 계산을 반복하는 경우, 이전에 계산한 값을 메모리에 저장함으로써 동일한 계산의 반복 수행을 최소화하여 프로그램의 실행 속도를 높여준다.
+</br>
 #### ◾ 분할 정복 방식과의 차이점
 - 다이나믹 프로그래밍 : 부분 문제는 중복되어서 상위 문제 해결 시에 재사용되고, 메모이제이션 기법을 사용한다.
 - 분할 정복 : 부분 문제는 서로 중복되지 않으며, 메모이제이션 기법을 사용하지 않는다.
-
+</br>
 #### ◾ 기본 로직
 **1. Top-down**  
 > 문제를 작은 문제로 나누고, 그 문제를 풀어냄으로써 전체 문제를 해결하는 방식. 재귀 호출을 이용해서 쉽게 해결할 수 있다.
@@ -156,6 +157,6 @@ N보다 작은 자연수들로 모두 나눠본다.
 </br>
 
 ### 참고
-[에라토스테네스의 체](https://choheeis.github.io/newblog//articles/2020-04/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%EC%B2%B4)
-[[이것이 코딩 테스트다] 6. 다이나믹 프로그래밍](https://freedeveloper.tistory.com/276)
+[에라토스테네스의 체](https://choheeis.github.io/newblog//articles/2020-04/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98%EC%B2%B4)</br>
+[[이것이 코딩 테스트다] 6. 다이나믹 프로그래밍](https://freedeveloper.tistory.com/276)</br>
 [동적 계획법 (Dynamic Programming)과 분할 정복(Divide and Conquer) 알고리즘](https://syujisu.tistory.com/147)
