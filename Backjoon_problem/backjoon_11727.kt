@@ -1,18 +1,15 @@
-package backjoon_15988
+package backjoon_11727
 
 fun main() {
     val br = System.`in`.bufferedReader()
     val N = br.readLine().toInt()
-    var arr = LongArray(1000001, {0})
-    arr[1] = 1
-    arr[2] = 2
-    arr[3] = 4
 
-    for (i in 4..1000000) {
-        arr[i] = (arr[i-1] + arr[i-2] + arr[i-3]) % 1000000009
+    val dp = IntArray(1001)
+    dp[1] = 1
+    dp[2] = 3
+
+    for(i in 3..N) {
+        dp[i] = (dp[i-1] + 2 * dp[i - 2]) % 10007
     }
-    for (i in 0 until N) {
-        val n = br.readLine().toInt()
-        println(arr[n])
-    }
+    println(dp[N])
 }
