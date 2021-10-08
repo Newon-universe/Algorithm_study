@@ -94,6 +94,9 @@ Shift 연산(<<, >>) : A << B라고 한다면 A를 좌측으로 B 비트만큼 �
 
 ### 참고
 https://ko.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/the-factorial-function
+</br>
 https://hongjw1938.tistory.com/78
+</br>
 https://itandhumanities.tistory.com/27
+</br>
 https://coding-food-court.tistory.com/189
