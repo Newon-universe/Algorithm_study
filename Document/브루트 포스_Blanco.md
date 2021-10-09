@@ -1,7 +1,7 @@
 ## 브루트 포스 (Brute Force)
 
 ### ◾ 개념
-조합 가능한 모든 문자열을 하나씩 대입해 보는 방식으로 암호를 해독하는 방법.
+조합 가능한 모든 문자열을 하나씩 대입해 보는 방식
 
 브루트 포스 공격(brute force attack) 또는 키 전수조사(exhaustive key search), 무차별 대입 공격(無差別代入攻擊) 등으로도 부른다. 
 흔히 수학 문제를 원시적으로 푸는 방법인 '수 대입 노가다'의 학술적 버전이다. 주로 암호학에서 연구되는 방법이나, 다른 알고리즘 분야에서도 사용되고 있다.
@@ -43,8 +43,11 @@ for (i in 1 until N) {
 ```kotlin
 /* 순열 구하기*/
 fun <T> permutation(el: List<T>, fin: List<T> = listOf(), sub: List<T> = el ): List<List<T>> {
-    return if(sub.isEmpty()) listOf(fin)
-        else sub.flatMap { permutation(el, fin + it, sub - it) }
+    if(sub.isEmpty()) {
+    	return listOf(fin)
+    } else {
+        return sub.flatMap { permutation(el, fin + it, sub - it) }
+    }
 }
 
 fun main() {
@@ -70,24 +73,21 @@ fun main() {
 ```kotlin
 /* 최대 공약수 구하기 */
 fun greatest_common_divisor(numA: Int, numB: Int): Int{
-	if (numB == 0) {
-		return numA  
-	}
-	else {
-		return greatest_common_divisor(numB, numA%numB)
-	}
+    if (numB == 0) {
+      return numA  
+    } else {
+      return greatest_common_divisor(numB, numA%numB)
+    }
 }
 
 fun main() {
-	println(greatest_common_divisor(72,90) // 재귀함수 시작
+    println(greatest_common_divisor(72,90) // 재귀함수 시작
 }
 ```
 
 > **브루트 포스에서의 재귀와 DP의 차이점** </br>
 > 차이점
-잘 생각해보면 Dynamic Programming과도 매우 흡사해 보인다. 그 또한 Top-Down을 사용 시 재귀를 통해 수행하는데, 기저 사례를 통해 탈출 조건을 만들고, 현재 함수의 상태를 전달하는 Parameter를 전달한다.
-또한 Return을 통해 필요한 값을 반환하여 정답을 구하는 연산 시에 사용하게 된다.
-완전 탐색의 재귀와 DP의 차이점은, DP는 작은 문제가 큰 문제와 동일한 구조를 가져 큰 문제의 답을 구할 시에 작은 문제의 결과를 기억한 뒤 그대로 사용하여 수행 속도를 빠르게 한다는 것이다.
+잘 생각해보면 Dynamic Programming과도 매우 흡사해 보인다. 그 또한 Top-Down을 사용 시 재귀를 통해 수행하는데, 기저 사례를 통해 탈출 조건을 만들고, 현재 함수의 상태를 전달하는 Parameter를 전달한다. 또한 Return을 통해 필요한 값을 반환하여 정답을 구하는 연산 시에 사용하게 된다. 완전 탐색의 재귀와 DP의 차이점은, DP는 작은 문제가 큰 문제와 동일한 구조를 가져 큰 문제의 답을 구할 시에 작은 문제의 결과를 기억한 뒤 그대로 사용하여 수행 속도를 빠르게 한다는 것이다.
 그에 반해 완전 탐색은 크고 작은 문제의 구조가 다를 수 있고, 이전 결과를 반드시 기억하는 것이 아니라 해결 가능한 방법을 모두 탐색한다는 차이가 있다.
 (즉, DP는 일반적인 재귀 중 조건을 만족하는 경우에 적용 가능!)
 
@@ -106,37 +106,37 @@ Shift 연산(<<, >>) : A << B라고 한다면 A를 좌측으로 B 비트만큼 �
 
 ```kotlin
 /*백준 11723번*/
-       for(i in 0 until N){
-        val tmp = br.readLine().split(" ")
-        val sb = StringBuilder()
-        var s = 0
+for(i in 0 until N){
+   val tmp = br.readLine().split(" ")
+   val sb = StringBuilder()
+   var s = 0
 
-        when (tmp[0]) {
-            "add" -> {
-                	s = s or (1 shl tmp[1].toInt())  // shl => Shift연산, or => OR 연산
-            }
-            "remove" -> {
-               	 s = s and (1 shl tmp[1].toInt()) // and => And 연산
-            }
-            "check" -> {
-                	if ((s or (1 shl tmp[1].toInt())) > 0) {
-                  	  	sb.append("1\n")
-                	} else {
-                   		sb.append("0\n")
-                	}
-            }
-            "toggle" -> {
-               	 s = s xor (1 shl tmp[1].toInt()) // xor => XOR 연산
-           	}
-            "all" -> {
-                	s.inv()                              // inv() => NOT 연산
-           	}
-            "empty" -> {
-                	s = 0
-            }
-       }
-        print(s)
+   when (tmp[0]) {
+      "add" -> {
+         s = s or (1 shl tmp[1].toInt())  // shl => Shift연산, or => OR 연산
+      }
+     "remove" -> {
+         s = s and (1 shl tmp[1].toInt()) // and => And 연산
+     }
+     "check" -> {
+        if ((s or (1 shl tmp[1].toInt())) > 0) {
+           sb.append("1\n")
+        } else {
+           sb.append("0\n")
+        }
     }
+    "toggle" -> {
+        s = s xor (1 shl tmp[1].toInt()) // xor => XOR 연산
+    }
+    "all" -> {
+         s.inv() // inv() => NOT 연산
+    }
+    "empty" -> {
+         s = 0
+    }
+  }
+  print(s)
+}
   
 ```
 
