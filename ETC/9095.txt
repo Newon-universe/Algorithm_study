@@ -1,0 +1,23 @@
+import java.io.*
+
+fun main() { 
+    
+    val br = System.`in`.bufferedReader()
+    var T = br.readLine().toInt()
+    
+    val arr = Array(11,{0}) // 0~11
+
+    arr[1] = 1 // 1가지
+    arr[2] = 2 // 2가지
+    arr[3] = 4 // 4가지
+    
+    for (i in 1..T) { 
+        var n = br.readLine().toInt()
+        
+        for (i in 4..n) {
+            arr[i] = arr[i - 3] + arr[i - 2] + arr[i - 1] 
+        }
+
+        println(arr[n])
+    } 
+}

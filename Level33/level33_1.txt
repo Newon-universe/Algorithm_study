@@ -1,0 +1,61 @@
+import java.io.*
+
+var br = System.`in`.bufferedReader()
+var bw = System.`out`.bufferedWriter()
+
+
+fun solution() {
+
+    var M = br.readLine().toInt()
+    var set = 0
+
+    for(i in 0 until M)
+    {
+        var list = br.readLine()!!.split(" ")
+        var order = list[0]
+
+        when(order)
+        {
+            "add" -> {
+                var num = list[1].toInt()
+                set = set or (1 shl num)
+            }
+
+            "remove" -> {
+                var num = list[1].toInt()
+                set = set and (1 shl num).inv()
+            }
+
+            "check" -> {
+                var num = list[1].toInt()
+                if(set and (1 shl num) > 0)
+                    bw.write("1\n")
+                else
+                    bw.write("0\n")
+            }
+
+            "toggle" -> {
+                var num = list[1].toInt()
+                set = set xor (1 shl num)
+            }
+
+            "all" -> {
+                set = (0 or (1 shl 21)) - 2
+            }
+
+            "empty" -> set = 0
+
+        }
+
+    }
+
+}
+
+
+
+fun main() {
+    solution()
+    br.close()
+    bw.close()
+
+}
