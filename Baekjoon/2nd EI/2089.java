@@ -15,7 +15,7 @@ public class Main {
 
         while (n != 1) {
             outputStr.append(Math.abs(n % (-2)));
-            n = (int) Math.ceil((double)n / (-2));
+            n = (int)Math.ceil((double)n / (-2));
         }
         outputStr.append(n);
 
