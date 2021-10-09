@@ -137,3 +137,4 @@ void Init(arr: IntArray, unusedArr: IntArray, N: Int, M: Int) {
 [플래승급전 2승 2패](https://github.com/Newon-universe/Algorithm_study)</br>
 [브루트 포스(무식하게 풀기)](https://velog.io/@polynomeer/브루트-포스무식하게-풀기)</br>
 [\[코딩테스트 대비\] 순열(Permutation)과 조합(Combination) 알고리즘](https://aerocode.net/376)
+[\[ C/C++\] 순열(Permutation)과 조합(Combination) 알고리즘 구현하기](https://cocoon1787.tistory.com/81)
