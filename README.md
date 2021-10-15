@@ -1,14 +1,13 @@
 ### :star: [Newon](https://github.com/Newon-universe)'s Algorithm
-<td align="center">
- <a href="https://github.com/xoxeez">
-  <img src="https://avatars.githubusercontent.com/u/80164141?s=400&u=18dbe14cc4d456edf912784cf89299e68a973858&v=4" width="150px;"/>
+<td align="Center">
+ <a href="https://github.com/Newon-universe">
+  <img src="https://avatars.githubusercontent.com/u/80164141?s=400&u=18dbe14cc4d456edf912784cf89299e68a973858&v=4" width="150px;"/></a>
  </br></br>
 </td>
 
-<img src="https://img.shields.io/badge/Kotlin-0095D5?style=flat-square&logo=kotlin&logoColor=white">
-<img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white">
+<img src="https://img.shields.io/badge/Kotlin-0095D5?style=flat-square&logo=kotlin&logoColor=white"> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white">
 
-# 
+#
 
 #### WEEK 1.
  - [x] [백준 평균은 넘겠지](https://www.acmicpc.net/problem/4344)
@@ -31,3 +30,4 @@
  - [x] [백준 N과 M (1)](https://www.acmicpc.net/problem/15649)
  - [ ] [백준 스타트와 링크](https://www.acmicpc.net/problem/14889) 
  - [ ] [백준 ABCDE](https://www.acmicpc.net/problem/13023)
+
