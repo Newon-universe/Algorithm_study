@@ -21,7 +21,7 @@ def recursive_function(i):
 ![6CC23D65-31A5-4556-99CF-8F5C4809BAFD](https://user-images.githubusercontent.com/70764912/137519914-b0e2af2e-2775-461f-8c68-ebe376c4fe95.jpeg)
 
 ### ② 구현 방법
-- 시간복잡도
+- 시간복잡도   
   O(간선의 개수 + 노드의 개수)
 - 공간복잡도
 
@@ -65,9 +65,12 @@ dfs(graph,1,visited)
 
 ```
 > ◾ DFS와 백트래킹(Backtracking)의 차이
-
+DFS는 깊이 우선 탐색하여 모든 노드를 방문하는 것을 목표로 한다.
+백트래킹은 불필요한 탐색을 하지 않기 위해 유망하지 않는 경우의 수를 줄이는 것을 목표로 한다.
 
 </br>
 
 ### 참고
-[플래승급전 2승 2패](https://github.com/Newon-universe/Algorithm_study)
+[플래승급전 2승 2패](https://github.com/Newon-universe/Algorithm_study)  
+(https://gamedevlog.tistory.com/49)
+이것이 코딩 테스트다 책  
