@@ -3,7 +3,7 @@
 ### ① 개념
 - 컴퓨터 과학에 있어서 재귀(再歸, Recursion)는 자신을 정의할 때 자기 자신을 재참조하는 방법을 뜻하며, 이를 프로그래밍에 적용한 재귀 호출(Recursive call)의 형태로 많이 사용된다.
 ### ② 코드(kotlin)
-```
+```kotlin
 /* 팩토리얼 구하기 */
 fun factorial(n: Int, acc: Int): Int {
     return if (n <= 0) {
@@ -33,7 +33,7 @@ fun factorial(n: Int, acc: Int): Int {
 따라서 깊이 우선 탐색의 공간 복잡도는![4](https://user-images.githubusercontent.com/42407740/137576787-4ec0463e-70ea-4505-b4d3-3656048efc57.JPG)이다.
 
 ### ③ 코드(kotlin)
-```
+```kotlin
 /* 백준 13023 */
 val br = System.`in`.bufferedReader()
 val bw = System.`out`.bufferedWriter()
@@ -141,7 +141,7 @@ fun main() {
 하지만 일부 경우의 문제들은 여전히 백트래킹으로만 해결이 가능한 문제도 있으며 그러한 경우에 많이 사용된다.
 
 ### ③ 코드(kotlin)
-```
+```kotlin
 /* 백준 2661 좋은수열 */
 lateinit var arr: IntArray
 var n: Int = 0
