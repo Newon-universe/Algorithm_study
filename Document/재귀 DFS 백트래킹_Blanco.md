@@ -142,36 +142,56 @@ fun main() {
 
 ### ③ 코드(kotlin)
 ```kotlin
-/* 백준 2661 좋은수열 */
-lateinit var arr: IntArray
-var n: Int = 0
-fun main(args: Array<String>) {
-    val sc = Scanner(System.`in`)
-    n = sc.nextInt()
-    arr = IntArray(n)
-    dfs(0, "")
-}
+/* 백준 14889 */
+package backjoon_14889
 
-fun dfs(depth: Int, num: String) {
-    if (depth == n) {
-        println(num)
-        exitProcess(0) // 가장 작은수 발견 종료
-    }
-    for (i in 1..3) {
-        if (check(num + i)) {
-            dfs(depth+1, num + i)
+import java.util.*
+
+lateinit var map: Array<IntArray>
+lateinit var isVisited: BooleanArray
+private var min = Integer.MAX_VALUE
+
+fun main() {
+    val br = System.`in`.bufferedReader()
+    var size = br.readLine().toInt()
+
+    map = Array(size) { IntArray(size) }
+    isVisited = BooleanArray(size)
+    for (i in 0 until size) {
+        var strtok = StringTokenizer(br.readLine())
+
+        for (j in 0 until size) {
+            map[i][j] = strtok.nextToken().toInt()
         }
     }
+    dfs(0, 0)
+    println(min)
 }
 
-// 좋은 수열인지 검사
-fun check(num: String): Boolean {
-    for (i in 1..num.length / 2) {
-        val left = num.substring(num.length - i * 2, num.length - i)
-        val right = num.substring(num.length - i, num.length)
-        if (left == right) return false
+private fun dfs(index: Int, depth: Int) {
+    if (depth == map.size / 2) {
+        var startTeam = 0
+        var linkTeam = 0
+        for (i in 0 until map.size - 1) {
+            for (j in i + 1 until map.size) {
+                if (isVisited[i] && isVisited[j]) {
+                    startTeam += map[i][j] + map[j][i]
+                } else if (!isVisited[i] && !isVisited[j]) {
+                    linkTeam += map[i][j] + map[j][i]
+                }
+            }
+        }
+        min = Math.min(min, Math.abs(startTeam - linkTeam))
+        return
     }
-    return true
+    for (i in index until map.size) {
+        if (!isVisited[i]) {
+            isVisited[i] = true
+            dfs(i + 1, depth + 1)
+            isVisited[i] = false
+        }
+    }
+
 }
 ```
 > ◾ DFS와 백트래킹(Backtracking)의 차이
