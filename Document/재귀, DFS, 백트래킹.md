@@ -64,13 +64,13 @@ dfs(graph,1,visited)
 
 
 ```
-> ◾ DFS와 백트래킹(Backtracking)의 차이
-DFS는 깊이 우선 탐색하여 모든 노드를 방문하는 것을 목표로 한다.
-백트래킹은 불필요한 탐색을 하지 않기 위해 유망하지 않는 경우의 수를 줄이는 것을 목표로 한다.
+> ◾ DFS와 백트래킹(Backtracking)의 차이   
+DFS는 깊이 우선 탐색하여 모든 노드를 방문하는 것을 목표로 한다.     
+백트래킹은 불필요한 탐색을 하지 않기 위해 유망하지 않는 경우의 수를 줄이는 것을 목표로 한다.    
 
 </br>
 
 ### 참고
 [플래승급전 2승 2패](https://github.com/Newon-universe/Algorithm_study)  
-(https://gamedevlog.tistory.com/49)
+(https://gamedevlog.tistory.com/49)   
 이것이 코딩 테스트다 책  
