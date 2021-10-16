@@ -157,8 +157,74 @@ fun dfs(graph: Graph) {
 모든 경우의 수 = 조합의 수 ^ 해당 조합 중에 조건을 만족하는 경우의 수
 
 ### ③ 코드
-> ◾ DFS와 백트래킹(Backtracking)의 차이
-DFS 는 모든 정점을 살펴본 후 간선을 통해 이동하지만 백트래킹은 하나의 정점에 도달하지 않더라도 유망하지 않으면 생략하고 다른 간선으로 이동한다.
+백트래킹으로 유명한 N-queen 문제이다. [N-Queen](https://www.acmicpc.net/problem/9663)  
+  
+> N-Queen 문제는 크기가 N × N인 체스판 위에 퀸 N개를 서로 공격할 수 없게 놓는 문제이다.  
+> N이 주어졌을 때, 퀸을 놓는 방법의 수를 구하는 프로그램을 작성하시오.  
+  
+```Kotlin
+
+var N: Int
+var count = 0;
+var arr[15][15] = {0, };
+
+fun CanLeftDiagnol(col: Int, row: Int): Bool{
+    while(col >= 0 && row >= 0){
+        if(arr[col][row] == 1){
+            return false;
+        }
+        col -= 1;
+        row -= 1;
+    }
+    return true;
+}
+
+fun CanRightDiagnol(col: Int, row: Int): Bool{
+    while(col >= 0 && row <= N - 1){
+        if(arr[col][row] == 1){
+            return false;
+        }
+        col -= 1;
+        row += 1;
+    }
+    return true;
+}
+
+fun CanCol(col: Int, row: Int): Bool{
+    for(i in col downTo 0){
+        if(arr[i][row] == 1){
+            return false;
+        }
+    }
+    return true;
+}
+
+fun Solve(k: Int){
+    if (k == N){
+        count += 1;
+        return;
+    }
+    
+    for(row in 0..N-1){
+        if(CanCol(k, row) && CanLeftDiagnol(k, row) && CanRightDiagnol(k, row)){
+            arr[k][row] = 1;
+            Solve(k + 1);
+            arr[k][row] = 0;
+        }
+    }
+    return;
+}
+
+fun main(){
+    N = readLine().toInt();
+    Solve(0);
+    print(count);
+}
+```
+
+> ◾ DFS와 백트래킹(Backtracking)의 차이  
+DFS 는 모든 정점을 살펴본 후 간선을 통해 이동하지만  
+백트래킹은 하나의 정점에 도달하지 않더라도 유망하지 않으면 생략하고 다른 간선으로 이동한다.
 
 </br>
 
