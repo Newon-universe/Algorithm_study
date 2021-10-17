@@ -1,3 +1,4 @@
+```Kotlin
 import java.io.*
 import java.util.*
  
@@ -38,3 +39,4 @@ fun main() {
  
     bw.flush()
 }
+```
