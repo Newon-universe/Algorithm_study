@@ -21,7 +21,6 @@ public class Main {
                 visit[i] = false;
             }
         }
-        return;
     }
 
     public static void main(String[] args) throws IOException {
