@@ -25,3 +25,8 @@
  - [x] [다음 순열](https://www.acmicpc.net/problem/10972)
  - [x] [부등호](https://www.acmicpc.net/problem/2529)
  - [x] [집합](https://www.acmicpc.net/problem/11723)
+
+#### WEEK 4.
+ - [ ] [15649번: N과 M (1)](https://www.acmicpc.net/problem/15649)
+ - [ ] [14889번: 스타트와 링크](https://www.acmicpc.net/problem/14889) 
+ - [ ] [13023번: ABCDE](https://www.acmicpc.net/problem/13023)
