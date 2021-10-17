@@ -1,14 +1,13 @@
-```Kotlin
 import java.io.*
 import java.util.*
  
 val br = System.`in`.bufferedReader()
 val bw = System.`out`.bufferedWriter()
- 
+
 var n = 0
 var m = 0
 val check = BooleanArray(10, { false })
- 
+
 fun printString(sequence: String) {
     for (i in 0..sequence.length - 1) {
         bw.write("${sequence[i]} ")
@@ -39,4 +38,3 @@ fun main() {
  
     bw.flush()
 }
-```
