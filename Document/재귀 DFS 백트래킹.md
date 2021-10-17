@@ -350,6 +350,11 @@ fun check(num: String): Boolean {
 > Backtracking : 불필요한 탐색을 하지 않기 위해, 유망하지 않은 경우의 수를 줄이는 것을 목표로 한다.
 </br>
 
+### 피드백
+간선 내용 더 추가해주세욥 (**정점과 노드, 같은 의미이니 용어 통일해주세요 :)**)
+코틀린 코드 맨 마지막꺼 블랑코의 새로운 코드로 바꿔주세요 (**문의**)
+
+
 ### 참고
 [글쓰는 개발자의 꿈](https://juyeop.tistory.com/16) 
 [Heee's Development Blog](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)
