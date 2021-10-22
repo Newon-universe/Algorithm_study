@@ -31,9 +31,23 @@ O(V) - 노드의 개수만큼 시간이 소요된다.
 ## 큐
 
 ### ◾ 개념
+First in First out
+Last in Last out
+파이썬에서는 deque(double ended queue) - deque는 front와 end에서 삭제와 삽입이 모두 가능함
 
 ### ◾ 언어별 선언 및 사용방법(CRUD)
+```
+from collections import deque
 
+q=deque()
+q.append(123)
+q.append(456)
+q.append(789)
+print("size:",len(q))
+while len(q)>0:
+	print(q.popleft())
+
+```
 ### ◾ 시간복잡도
 
 ### ◾ 장점
