@@ -56,7 +56,7 @@ while len(q)>0:
 ### ◾ 장점  
 앞뒤로 넣고 빼는 것이 가능함   
 ### ◾ 단점  
-
+queue의 중간에 위치한 데이터로의 접근이 어렵다   
 </br>
 
 ## BFS (너비우선탐색 : Breadth First Search)
