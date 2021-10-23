@@ -9,6 +9,22 @@
 보통 헤드노드와 테일노드가 더미노드가 되는데, 특별한 이유가 있는건 아니고 데이터 관리의 편의를 위해 그렇게 한다고 한다.
 
 ### ◾ 언어별 선언 및 사용방법(CRUD)
+코틀린에서의 링크드리스트 선언 및 사용방법이다.
+```Kotlin
+fun main() {
+
+    val linkedList = LinkedList() // 선언
+    
+    linkedList.addNodeAtFront(1) // 첫번째 리스트에 1 추가
+    linkedList.addNodeAtLast(10) // 마지막 리스트에 10 추가
+    linkedList.addAtPosition(5, 5) // 5번째 리스트에 5 추가
+    linkedList.removeAtFront() // 첫번째 리스트를 삭제
+    linkedList.removeAtLast() // 마지막 리스트를 삭제
+    linkedList.removeAtPosition(7) // 7번째 리스트 삭제
+    linkedList.printAllElement() // 모든 리스트를 출력
+    
+}
+```
 
 
 ### ◾ 시간복잡도
@@ -37,41 +53,154 @@ O(n)의 시간복잡도가 나오는 것. 그러나 첫번째와 마지막 데�
 
 ### ◾ 개념
 그래프는 정점과 간선으로 이루어진 자료구조다. 그러나 정점마다 간선이 없을수도 있고 있을수도 있다.
-그래서 따로 방향성이 없기 때문에 루트 노드나 부모와 자식이라는 개념이 존재하지 않는다.
+그래서 루트 노드나 부모와 자식이라는 개념이 존재하지 않는다.
+다만 노드의 연결상태에 따라 방향성이 있거나 없을 수 있다는 특징이 있다.
 
 ### ◾ 구현방법 1 : 인접 리스트 이용
-- 구현방법, 특징, 시간/공간복잡도 등
+각 정점마다 각각의 링크드리스트를 갖게 하는 방식으로 구현한다.
+
+![img](https://t1.daumcdn.net/cfile/tistory/992D63355CC5BA5403)
+
+- V개의 리스트에 간선(E) 만큼 원소가 들어있음
+- 인접 노드를 쉽게 찾을 수 있음
+- 공간복잡도 : O(V+E)
+
 
 ### ◾ 구현방법 2 : 인접 행렬 이용
-- 구현방법, 특징, 시간/공간복잡도 등
+인접 행렬은 NxN 행렬로 graph[i][j]가 true라면 정점 i 에서 정점 j 로의 간선이 있다는 것을 의미한다.
+정점의 개수가 V 라면 V^2 크기의 2차원 배열을 생성하여 1과 0을 사용하여 true/false를 구분하여 값을 저장한다.
+양방향 인접행렬의 경우 대칭 행렬의 형태로 구성된다.
+
+![img](https://t1.daumcdn.net/cfile/tistory/99FEFB395CCDBCC810)
+
+ - V개의 노드 표현을 위해 V^2 만큼의 공간이 필요
+ - 인접 노드를 찾기 위해선 모든 노드를 순회해야 함
+ - 공간복잡도 : O(V^2)
+
 
 </br>
 
 ## 큐
 
 ### ◾ 개념
+![img](https://media.vlpt.us/images/suitepotato/post/482139b5-de8a-41bf-af3b-1e5ae1519773/queue_concept_01.PNG)
+큐(queue)는 차례를 기다리는 줄이라는 의미를 가지고 있는 단어처럼 먼저 들어온 자료부터 순서대로 처리하는 방식을 말한다.
+한 쪽 끝에서는 자료의 삽입 연산만 가능하고 반대쪽 끝에서는 삭제만 가능한 구조로서 선입선출의 특징을 가진다.
 
 ### ◾ 언어별 선언 및 사용방법(CRUD)
+코틀린 표준 라이브러리에는 큐가 없기 때문에 자바의 Queue 라이브러리를 import 하여 사용할 수 있다.
+```Kotlin
+import java.util.*
+
+fun main() {
+    // 큐 선언하기
+    var queue: Queue<Int> = LinkedList<Int>()
+
+    // 맨 뒤에 데이터 삽입하기
+    queue.add(1)
+    queue.add(2)
+    queue.add(3)
+
+    // 맨 앞 데이터 삭제하기
+    queue.poll()
+
+    // 맨 앞 데이터 읽기
+    print(queue.peek())
+}
+```
+
+스택과 다르게 입구와 출구가 다르기 때문에 삽입될 때는 맨 뒤에 삽입되고, 삭제할 때는 맨 앞의 데이터가 삭제된다.
+
 
 ### ◾ 시간복잡도
+추가는 O(1), 삭제도 O(1), 데이터를 읽을 때는 O(n)의 시간복잡도를 갖는다.
+링크드리스트처럼 처음부터 순서대로 읽어들어가야 n번째의 데이터에 도달할 수 있기 때문.
 
 ### ◾ 장점
+- 데이터가 입력된 시간 순서대로 처리해야 할 필요가 있는 상황에 유리하다.
 
 ### ◾ 단점
+- 크기가 제한적이다.
+- 큐의 앞 부분이 비어도 데이터를 삽입할 수 없다.
 
 </br>
 
 ## BFS (너비우선탐색 : Breadth First Search)
 
 ### ◾ 개념
+데이터 탐색방법의 한 종류다. 루트 노드(혹은 다른 임의의 노드)에서 시작해서 인접한 노드를 먼저 탐색해서 데이터를 찾는 방법론이다.
 
 ### ◾ 시간복잡도
+- 인접 리스트로 표현된 그래프: O(N+E)
+- 인접 행렬로 표현된 그래프: O(N^2)
 
 ### ◾ BFS와 DFS의 비교
+지구상에 존재하는 모든 친구 관계를 그래프로 표현한 후 나와 친구 사이에 존재하는 경로를 찾는 경우를 예로 들면,
+DFS 의 경우 : 모든 친구 관계를 다 살펴봐야 할지도 모른다.
+BFS  경우 : 나와 가까운 관계부터 탐색한다.
+결론은 검색 대상 그래프가 정말 크다면 DFS를 사용하는 것이 낫고, 검색 시작 지점으로부터 원하는 대상이 별로 멀지 않다면 BFS를 사용하는 것이 낫다.
+전자는 시간은 오래 걸릴지 모르지만 정확도에 초점을 맞춘 경우고, 후자는 효율성에 초점을 맞춘 경우다.
 
 ### ◾ 코드
-</br>
+```Kotlin
+import java.util.*
+
+var n = 0 // 사람의 개수
+var a = 0 // 서로 다른 두 사람
+var b = 0 // 서로 다른 두 사람
+var m = 0 // 관계의 개수
+var count = 0 // 촌수
+lateinit var q : Queue<Int>
+
+var graph = Array(101) {Array<Int>(101) {0}} // 관계 2차원 배열로 표현
+var visit = Array(101){0} // 방문 여부 표시
+
+fun main(args: Array<String>) = with(Scanner(System.`in`)) {
+    n = nextInt()
+    a = nextInt()
+    b = nextInt()
+    m = nextInt()
+    q = LinkedList()
+
+    for (i in 0 until m) {
+        var j = nextInt()
+        var q = nextInt()
+        graph[j][q] = 1
+        graph[q][j] = 1
+    } // 관계 표시해줌
+
+    BFS(a)
+}
+
+fun BFS(x : Int){
+    var tmp = x
+    q.add(tmp) // 자기자신 큐에 삽입
+    visit[tmp] = 1;
+
+    while(!q.isEmpty()){
+        for(i in 1..q.size){
+            tmp = q.poll()
+
+            if (b == tmp) {
+                return println(count)
+            } // 관계를 찾는 상대방을 마주치게 되면, 종료
+
+            for(j in 1..n){
+                if(visit[j] == 0 && graph[tmp][j] == 1) {
+                    q.add(j)
+                    visit[j] = 1
+                } // 방문하지 않았고, 연결되있다면 큐에 삽입, 방문 처리
+            }
+        }
+        count++ // bfs 레벨파악을 위해 q의 사이즈만큼 반복하여 종료될 때 마다 count
+    }
+    println(-1) // 관계가 성립되지 않음
+}
+```
 
 
 ## 참고
 https://reakwon.tistory.com/25
+https://untitledtblog.tistory.com/70
+https://devuna.tistory.com/32
+
