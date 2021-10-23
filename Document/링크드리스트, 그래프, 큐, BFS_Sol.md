@@ -84,6 +84,8 @@ O(n)의 시간복잡도가 나오는 것. 그러나 첫번째와 마지막 데�
 
 ### ◾ 개념
 ![img](https://media.vlpt.us/images/suitepotato/post/482139b5-de8a-41bf-af3b-1e5ae1519773/queue_concept_01.PNG)
+
+
 큐(queue)는 차례를 기다리는 줄이라는 의미를 가지고 있는 단어처럼 먼저 들어온 자료부터 순서대로 처리하는 방식을 말한다.
 한 쪽 끝에서는 자료의 삽입 연산만 가능하고 반대쪽 끝에서는 삭제만 가능한 구조로서 선입선출의 특징을 가진다.
 
@@ -201,6 +203,8 @@ fun BFS(x : Int){
 
 ## 참고
 https://reakwon.tistory.com/25
+
 https://untitledtblog.tistory.com/70
+
 https://devuna.tistory.com/32
 
