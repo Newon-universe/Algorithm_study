@@ -122,7 +122,7 @@ SampleQueue.peak                              // 현재 큐의 front, 즉 다음
 - 알고리즘이 복잡하다.
 - 특정 자료의 탐색 시간이 많이 소요된다.
   
-> 링크드리스트오 동일하다
+> 링크드리스트와 동일하다
 
 </br>
 ## BFS (너비우선탐색 : Breadth First Search)
