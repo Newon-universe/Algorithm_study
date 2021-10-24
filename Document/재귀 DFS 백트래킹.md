@@ -111,11 +111,11 @@ class Graph {
       visited[v] = true;
       System.out.print(v + " ");
 
-      // 방문한 노드와 인접한 모든 노드를 가져온다.
+      // 방문한 정점와 인접한 모든 정점을 가져온다.
       Iterator<Integer> i = adj[v].listIterator();
       while (i.hasNext()) {
           int n = i.next();
-          // 방문하지 않은 노드면 해당 노드를 시작 노드로 다시 DFSUtil 호출
+          // 방문하지 않은 정점이면 해당 정점을 시작 정점로 다시 DFSUtil 호출
           if (!visited[n])
               DFSUtil(n, visited); // 순환 호출
       }
@@ -132,7 +132,7 @@ class Graph {
 
   /** DFS 탐색 */
   void DFS() {
-      // 노드의 방문 여부 판단 (초깃값: false)
+      // 정점의 방문 여부 판단 (초깃값: false)
       boolean visited[] = new boolean[V];
 
       // 비연결형 그래프의 경우, 모든 정점을 하나씩 방문
@@ -257,9 +257,9 @@ dfs(graph,1,visited)
 ##  백트래킹(Backtracking)
 ### ① 개념
 - 재귀적으로 문제를 하나씩 풀어나가되 현재 재귀를 통해 확인 중인 상태(노드)가 제한 조건에 위배되는지(유망하지 않은지) 판단한다.
-- 제한 조건에 위배되는 경우 해당 상태(노드)를 제외하고 다음 단계로 나아간다.
-- 현재 상태(노드)에서 다음 상태(노드)로 나아갈 수 있는 모든 경우를 찾되, 그 중 유망하지 않다면 현재에서 더 이상 나아가지 않고 이전의 상태(노드)로 돌아가 다음 상태(노드)를 검사한다.
-- 더 이상 탐색할 필요가 없는(유망하지 않은) 상태(노드)를 제외하는 것을 가지치기(pruning)라고 한다.
+- 제한 조건에 위배되는 경우 해당 상태(정점)를 제외하고 다음 단계로 나아간다.
+- 현재 상태(정점)에서 다음 상태(정점)로 나아갈 수 있는 모든 경우를 찾되, 그 중 유망하지 않다면 현재에서 더 이상 나아가지 않고 이전의 상태(정점)로 돌아가 다음 상태(정점)를 검사한다.
+- 더 이상 탐색할 필요가 없는(유망하지 않은) 상태(정점)를 제외하는 것을 가지치기(pruning)라고 한다.
  
 즉, 이 방법을 통해 우리는 모든 경우의 수를 체크 하지 않고 필요한 것만 체크하여 전체 풀이 시간을 단축할 수 있게 된다!
 > DFS도 백트래킹을 사용한 대표적인 알고리즘이다.
@@ -310,43 +310,60 @@ public class BackTracking_예제 {
 ```
 > Kotlin
 ```kotlin
+/* 백준 14889 */
+package backjoon_14889
+
 import java.util.*
-import kotlin.system.exitProcess
 
+lateinit var map: Array<IntArray>
+lateinit var isVisited: BooleanArray
+private var min = Integer.MAX_VALUE
 
-lateinit var arr: IntArray
-var n: Int = 0
-fun main(args: Array<String>) {
-    val sc = Scanner(System.`in`)
-    n = sc.nextInt()
-    arr = IntArray(n)
-    dfs(0, "")
-}
+fun main() {
+    val br = System.`in`.bufferedReader()
+    var size = br.readLine().toInt()
 
-fun dfs(depth: Int, num: String) {
-    if (depth == n) {
-        println(num)
-        exitProcess(0) // 가장 작은수 발견 종료
-    }
-    for (i in 1..3) {
-        if (check(num + i)) {
-            dfs(depth+1, num + i)
+    map = Array(size) { IntArray(size) }
+    isVisited = BooleanArray(size)
+    for (i in 0 until size) {
+        var strtok = StringTokenizer(br.readLine())
+
+        for (j in 0 until size) {
+            map[i][j] = strtok.nextToken().toInt()
         }
     }
+    dfs(0, 0)
+    println(min)
 }
 
-// 좋은 수열인지 검사
-fun check(num: String): Boolean {
-    for (i in 1..num.length / 2) {
-        val left = num.substring(num.length - i * 2, num.length - i)
-        val right = num.substring(num.length - i, num.length)
-        if (left == right) return false
+private fun dfs(index: Int, depth: Int) {
+    if (depth == map.size / 2) {
+        var startTeam = 0
+        var linkTeam = 0
+        for (i in 0 until map.size - 1) {
+            for (j in i + 1 until map.size) {
+                if (isVisited[i] && isVisited[j]) {
+                    startTeam += map[i][j] + map[j][i]
+                } else if (!isVisited[i] && !isVisited[j]) {
+                    linkTeam += map[i][j] + map[j][i]
+                }
+            }
+        }
+        min = Math.min(min, Math.abs(startTeam - linkTeam))
+        return
     }
-    return true
+    for (i in index until map.size) {
+        if (!isVisited[i]) {
+            isVisited[i] = true
+            dfs(i + 1, depth + 1)
+            isVisited[i] = false
+        }
+    }
+
 }
 ```
 > **DFS와 백트래킹(Backtracking)의 차이** </br>
-> DFS : 깊이 우선 탐색하여 모든 노드를 방문하는 것을 목표로 한다. </br>
+> DFS : 깊이 우선 탐색하여 모든 정점을 방문하는 것을 목표로 한다. </br>
 > Backtracking : 불필요한 탐색을 하지 않기 위해, 유망하지 않은 경우의 수를 줄이는 것을 목표로 한다.
 </br>
 
