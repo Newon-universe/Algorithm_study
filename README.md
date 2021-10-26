@@ -29,5 +29,5 @@
 #### WEEK 4.
  - [x] [백준 N과 M (1)](https://www.acmicpc.net/problem/15649)
  - [x] [백준 스타트와 링크](https://www.acmicpc.net/problem/14889) 
- - [ ] [백준 ABCDE](https://www.acmicpc.net/problem/13023)
+ - [x] [백준 ABCDE](https://www.acmicpc.net/problem/13023)
 
