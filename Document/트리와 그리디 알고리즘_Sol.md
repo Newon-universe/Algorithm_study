@@ -153,16 +153,52 @@ fun main() {
 마시멜로 실험이 가장 대표적인 예시인데, 마시멜로 1개를 먹지 않고 5분만 기다리면 1개를 더 얹어 2개를 먹을 수 있는 상황임에도
 일단 먹고 뒤는 보지 않는 것을 택하는 알고리즘이다.
 여기서 핵심은 기다렸어야지 가 아니라, 각 단계에서 최선의 선택을 하는 것이 궁극적으로 최적의 결과를 가져오지는 못한다는 점이다.
+마라톤으로 간단한 예를 하나 더 들지면, 당장 전력질주 하는 것이 짧은 시간 동안은 선두를 유지할 수 있으니까 최선의 선택일지 몰라도, 장기적으로 봤을 때 그건 좋은 선택이 아니라는걸 누구나 안다.
+선두가 되기 위해서 당장은 전력질주를 하는게 맞지만(현재에서 최선의 선택), 가능한 최고 성적(최적의 해)은 낼 수 없는 이치와 같다.
 
 
 ### 사용조건
-탐욕적 선택조건, 최적 부분 조건에 대해서 작성해주세요.  
-*다른 조건이나 이름이 있다면, 함께 설명해주세요.*
+위의 조건때문에 그리디 알고리즘을 적절하게 사용하기 위해서는 아래 2가지 조건의 문제상황에서만 최적의 해를 얻어낼 수 있다.
+
+- 탐욕적 선택조건 : 앞의 선택이 이후의 선택에 영향을 주지 않는 경우. 그러려면 문제 상황 속 모든 객체들이 독립적으로 서로 변수를 창출하지 않아야 한다.
+
+- 최적 부분 조건 : 문제에 대한 최적해가 부분문제에 대해서도 역시 최적해인 경우. 최적해만 모인다면 당연히 결과도 최적해일 수 밖에 없다.
+
 ### 코드 예시
-그리디 알고리즘이 사용된 예시를 코드로 작성해주세요.  
-sudo 코드도 좋습니다.  
+```Kotlin
+// 1원, 50원, 100원, 500원 동전이 주어질 때, 가장 적게 지불하는 동전의 수를 구하기
+
+private fun Int.coinProblem(list: List<Int>) : Int {
+
+	//항상 최적을 따라야 하기 때문에 가장 큰 숫자부터 내림차순으로 정렬
+	val coinList = list.sortedDescending()
+
+
+    var coinCount = 0	// 전체 코인 수
+    var money = this	// this는 Int.coinProblem을 뜻함
+    var coinNum: Int	// 각각의 코인마다 소모된 수
+    
+    
+    for(coin in coinList) {
+        coinNum = money / coin
+        coinCount += coinNum	
+
+        money -= coinNum * coin	// 코인의 양 * 코인
+    }
+
+    return coinCount
+}
+ 
+
+fun main() {
+    val coinList = listOf(1,100,50,500)
+    
+    println(4720.coinProblem(coinList))
+}
+```
 
 ## 참고
 
 - https://velog.io/@keum0821/%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC
 - https://medium.com/depayse/kotlin-data-structure-tree-b8518d233f9d
+- https://minoflower.tistory.com/4
