@@ -25,6 +25,10 @@
 
 * 트리의 차수 : 트리가 가지고 있는 노드의 차수 중에서 가장 큰 값이다.
 
+* Sibilings : 형제. 같은 부모를 가진 Child들을 뜻한다.
+
+* Skew tree : 경사 트리. 모든 노드가 오직 한 개의 자식만을 가질 때를 뜻한다.
+
 ### 트리와 그래프의 차이
 *  트리
 1) 트리는 그래프의 특별한 케이스이며 "최소 연결 트리"라고도 불린다. 두 개의 정점 사이에 반드시 1개의 경로만을 가진다.
@@ -107,7 +111,15 @@
   이차원 배열 이용하기
   i번째 노드의 왼쪽 자식은 arr[i][0]에, 오른쪽 자식은 arr[i][1]에 저장하는 방법을 이용할 수 있다.
   
-* 링크표현법 : 
+* 링크표현법
+
+```kotlin
+data class TreeNode<T>(
+	var data: T,
+    	var leftNode: TreeNode<T>?,
+    	var rightNode: TreeNode<T>?
+)
+``` 
 
 ## 순회
 
@@ -223,3 +235,4 @@ fun main() {
 
 (https://minoflower.tistory.com/4)
 (https://velog.io/@kjh107704/%ED%8A%B8%EB%A6%AC-%ED%8A%B8%EB%A6%AC%EC%9D%98-%ED%91%9C%ED%98%84)
+(https://genius-dev.tistory.com/entry/Kotlin%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-Tree%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-1)
