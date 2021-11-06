@@ -60,13 +60,75 @@
 
 ### 6. 분할정복 방법이 적용된 병합 정렬(Merge sort), 퀵 정렬(Quick sort)에서의 분할 과정      
 - 병합 정렬 (Merge sort)
+
 ![img](https://blog.kakaocdn.net/dn/bL9LCR/btq54nCwwSR/a41SK3K2vFwi0ZknuDknv1/img.gif)
+
+```Kotlin
+fun mergeSort(array: MutableList<Int>, start: Int, end: Int) {
+    if (start >= end) return
+
+    val mid = (start + end) / 2
+    mergeSort(array, start, mid)
+    mergeSort(array, mid + 1, end)
+
+    merge(array, start, mid, end)
+}
+
+fun merge(array: MutableList<Int>, start: Int, mid:Int, end: Int) {
+    val newList = mutableListOf<Int>()
+    var idxA = start
+    var idxB = mid + 1
+
+    while (idxA <= mid && idxB <= end) {
+        if (array[idxA] <= array[idxB]) {
+            newList.add(array[idxA])
+            idxA++
+        } else {
+            newList.add(array[idxB])
+            idxB++
+        }
+    }
+
+    if (idxA > mid) {
+        for (i in idxB..end) {
+            newList.add(array[i])
+        }
+    }
+
+    if (idxB > end) {
+        for (i in idxA..mid) {
+            newList.add(array[i])
+        }
+    }
+
+    for (e in newList.indices) {
+        array[start + e] = newList[e]
+    }
+}
+```
+
 합병 정렬은 배열이 1개가 될 때까지 계속 쪼갠다음 다시 합병 & 정렬을 하며 배열을 완성시키는 방법이다.
 위 그림처럼 절반으로 뚝 뚝 분할하다가 각각의 원소가 1개가 되면 대소 비교를 통해 정렬하면서 합병을 하면 된다. 
 
 
 - 퀵 정렬 (Quick sort)
+
 ![img](https://t1.daumcdn.net/cfile/tistory/996DAB335ACC1BDF16)
+
+```Kotlin
+fun qsort(list: List<Int>): List<Int> {
+    if (list.size < 2) {
+        return list
+    }
+
+    val pivot = list[list.size / 2]
+    val left = list.filter { it < pivot }
+    val right = list.filter { it > pivot }
+
+    return qsort(left) + listOf(pivot) + qsort(right)
+}
+```
+
 퀵 정렬은 n개의 데이터를 정렬할 때, 최악의 경우에는 O(n2)번의 비교를 수행하고, 평균적으로 O(n log n)번의 비교를 수행한다.
 위 그림처럼 리스트 가운데서 하나의 원소를 고른다. 이렇게 고른 원소(빨갛게 변하는 막대)를 피벗이라고 한다.
 피벗 앞에는 피벗보다 값이 작은 모든 원소들이 오고, 
