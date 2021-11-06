@@ -9,7 +9,10 @@
 <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=java&logoColor=white">
 </br>
 
+#
+
 #### WEEK 1.
+ [BAEKJOON](https://www.acmicpc.net/)
  - [x] [1065번: 한수](https://www.acmicpc.net/problem/1065)
  - [x] [4344번: 평균은 넘겠지](https://www.acmicpc.net/problem/4344)
 
