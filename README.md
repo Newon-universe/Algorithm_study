@@ -3,14 +3,15 @@
 <td align="center">
  <a href="https://github.com/xoxeez">
   <img src="https://avatars.githubusercontent.com/u/52715471?v=4?s=100" width="150px;"/>
- </br></br>
 </td>
+</br>
 
 <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=java&logoColor=white">
+</br>
 
 #### WEEK 1.
- - [x] [4344번: 평균은 넘겠지](https://www.acmicpc.net/problem/4344)
  - [x] [1065번: 한수](https://www.acmicpc.net/problem/1065)
+ - [x] [4344번: 평균은 넘겠지](https://www.acmicpc.net/problem/4344)
 
 #### WEEK 2.
  - [x] [1676번: 팩토리얼 0의 개수](https://www.acmicpc.net/problem/1676)
