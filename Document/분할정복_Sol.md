@@ -165,6 +165,10 @@ DP처럼 다시 재활용된다거나 정렬이 다음 정렬에 영향을 미�
 ---  
 ### 참고     
 https://bestinu.tistory.com/14 
+
+https://zion830.tistory.com/126
+
 https://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC
+
 http://ivis.kr/images/0/09/5%EC%9E%A5%EB%8F%99%EC%A0%81%EA%B3%84%ED%9A%8D%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.pdf
 
