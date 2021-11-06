@@ -1,0 +1,170 @@
+# 분할정복(Divide and Conquer)    
+---   
+### 1. 개념     
+그대로 해결할 수 없는 문제를 작은 문제로 분할하여 문제를 해결하는 방법이나 알고리즘이다.
+
+빠른 정렬이나 합병 정렬로 대표되는 정렬 알고리즘 문제와 고속 푸리에 변환(FFT) 문제가 대표적이다.       
+            
+<br></br>
+            
+### 2. 특징    
+
+분할 정복 알고리즘은 보통 재귀 함수(recursive function)를 통해 자연스럽게 구현된다. 예를 들면,
+
+```
+/* 분할 정복 수도 코드 */
+function F(x):
+  if F(x)의 문제가 간단 then:
+    return F(x)을 직접 계산한 값
+  else:
+    x 를 y1, y2로 분할
+    F(y1)과 F(y2)를 호출
+    return F(y1), F(y2)로부터 F(x)를 구한 값
+``` 
+또한 여기서 작은 부문제로 분할할 경우에 부문제를 푸는 알고리즘은 임의로 선택할 수 있다. 이러한 재귀호출을 사용한 함수는 함수 호출 오버헤드 때문에 실행 속도가 늦어진다.
+
+빠른 실행이나 부문제 해결 순서 선택을 위해, 재귀호출을 사용하지 않고 스택, 큐(queue) 등의 자료구조를 이용하여 분할 정복법을 구현하는 것도 가능하다.
+
+ <br></br>
+          
+### 3. 장단점     
+장점 : 문제를 나누어 해결한다는 특징상 병렬적으로 문제를 해결하는 데 큰 강점이 있다.
+
+단점 : 함수를 재귀적으로 호출함으로 인해 오버헤드가 발생한다. 또한 스택에 다양한 데이터를 보관하고 있어야 하므로 스택오버플로우가 발생한다.
+     
+ <br></br>     
+
+
+
+### 4. 분할정복 알고리즘의 처리과정(문제해결과정-기본로직)     
+(1) divide : 문제가 분할이 가능한 경우 2개 이상의 문제로 나눈다.
+
+(2) Conquer : 나누어진 문제가 여전히 분할이 가능하면, 또 다시 divide를 수행한다. 그렇지 않으면 문제를 푼다.
+
+(3) Combine : Conquer한 문제들을 통합하여 원래 문제의 답을 얻는다.
+
+문제를 제대로 나누면 Conquer하는 것은 쉽기 때문에 divide를 제대로 하는 것이 가장 중요하다.
+분할정복 알고리즘은 재귀 알고리즘이 많이 사용되는데, 이 부분에서 분할정복 알고리즘의 효율성이 정해진다.
+
+
+
+ <br></br>     
+          
+
+
+
+
+### 5. 시간복잡도     
+
+for문에서 N만큼 반복하기 때문에 O(n)이고 그 반복문안에서 특정 조건을 만족했을 때 return 하기때문에 O(nlogn)이 되어서 
+
+시간복잡도는 O(NlogN)이다.
+
+ <br></br>
+            
+### 6. 분할정복 방법이 적용된 병합 정렬(Merge sort), 퀵 정렬(Quick sort)에서의 분할 과정
+#### 병합 정렬(Merge sort)
+![캡처33](https://user-images.githubusercontent.com/42407740/140595542-1330be6f-e3a2-4d6f-a5c5-2a958e6facbd.JPG)
+
+```kotlin
+/*Merge sort*/
+fun mergeSort(array: MutableList<Int>, start: Int, end: Int) {
+    if (start >= end) return
+
+    val mid = (start + end) / 2
+    mergeSort(array, start, mid)
+    mergeSort(array, mid + 1, end)
+
+    merge(array, start, mid, end)
+}
+
+fun merge(array: MutableList<Int>, start: Int, mid:Int, end: Int) {
+    val newList = mutableListOf<Int>()
+    var idxA = start
+    var idxB = mid + 1
+
+    while (idxA <= mid && idxB <= end) {
+        if (array[idxA] <= array[idxB]) {
+            newList.add(array[idxA])
+            idxA++
+        } else {
+            newList.add(array[idxB])
+            idxB++
+        }
+    }
+
+    if (idxA > mid) {
+        for (i in idxB..end) {
+            newList.add(array[i])
+        }
+    }
+
+    if (idxB > end) {
+        for (i in idxA..mid) {
+            newList.add(array[i])
+        }
+    }
+
+    for (e in newList.indices) {
+        array[start + e] = newList[e]
+    }
+```
+
+
+#### 퀵 정렬(Quick sort)
+
+![캡처44](https://user-images.githubusercontent.com/42407740/140595695-6b7252c2-6855-49ff-acd7-047a594a16bc.JPG)
+
+
+```kotlin
+/*Quick sort*/
+fun quickSort(array: MutableList<Int>, low: Int, high: Int) {
+    if (high <= low) return
+
+    val mid = partition(array, low, high)
+    quickSort(array, low, mid - 1)
+    quickSort(array, mid, high)
+}
+
+fun partition(array: MutableList<Int>, low: Int, high:Int): Int {
+    val pivot = array[(low + high) / 2]
+    var left = low
+    var right = high
+    while (left <= right) {
+        while (array[left] < pivot) {
+            left++
+        }
+        while (array[right] > pivot) {
+            right--
+        }
+        if (left <= right) {
+            val temp = array[left]
+            array[left] = array[right]
+            array[right] = temp
+            left++
+            right--
+        }
+    }
+    return left
+}
+```
+     
+
+
+
+ <br></br>
+     
+     
+### 7. 동적 계획법(Dynamic Programming)과 분할정복법(Divide and Conquer) 비교
+공통점 : 문제를 작은 단위로 나누어 해결
+
+차이점 : 
+1) 동적 계획법 : 중복된 문제의 답은 저장되어 상위 문제 해결 시 재활용 됨(메모이제이션 기법)
+2) 분할정복법 : 부분 문제는 서로 중복되지 않음(메모이제이션 기본 사용 X)
+ <br></br>
+
+---  
+### 참고     
+https://ko.wikipedia.org/wiki/%EB%B6%84%ED%95%A0_%EC%A0%95%EB%B3%B5_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+https://week-year.tistory.com/201
+https://week-year.tistory.com/204?category=946649
