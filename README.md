@@ -56,6 +56,12 @@
 
 </br>
 
+[ **8회차**. 2021.11.07 - 11.13 ]
+##### - [이분탐색](Document/) (블랑코) , [정렬](Document/) (솔)
+##### - 1939 중량제한 / 2343 기타 레슨
+
+</br>
+
 ## Contributors
 <a href="https://github.com/Newon-universe/Algorithm_study/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Newon-universe/Algorithm_study" />
