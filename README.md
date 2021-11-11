@@ -31,3 +31,20 @@
  - [x] [백준 스타트와 링크](https://www.acmicpc.net/problem/14889) 
  - [x] [백준 ABCDE](https://www.acmicpc.net/problem/13023)
 
+#### WEEK 5.
+ - [x] [백준 DFS 와 BFS](https://www.acmicpc.net/problem/12609)
+ - [x] [백준 이모티콘](https://www.acmicpc.net/problem/14226) 
+
+#### WEEK 6.
+ - [x] [백준 트리순회](https://www.acmicpc.net/problem/1991)
+ - [ ] [백준 가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12013) 
+ - [ ] [백준 병든 나이트](https://www.acmicpc.net/problem/1783) 
+
+
+#### WEEK 7.
+ - [x] [백준 숫자카드](https://www.acmicpc.net/problem/2591)
+ - [x] [백준 Z](https://www.acmicpc.net/problem/1074) 
+
+#### WEEK 8.
+ - [ ] [백준 중량 제한](https://www.acmicpc.net/problem/1939)
+ - [ ] [백준 기타레슨](https://www.acmicpc.net/problem/2343) 
