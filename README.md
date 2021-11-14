@@ -90,9 +90,29 @@
  - [x] [백준 ABCDE](https://www.acmicpc.net/problem/13023)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ## Contributors
 <a href="https://github.com/Newon-universe/Algorithm_study/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Newon-universe/Algorithm_study" />
 </a>
 >>>>>>> 347ceb67e85f1e1289eca13aa993a51a1b8a0b8b
+=======
+#### WEEK 5.
+ - [x] [백준 DFS 와 BFS](https://www.acmicpc.net/problem/12609)
+ - [x] [백준 이모티콘](https://www.acmicpc.net/problem/14226) 
+
+#### WEEK 6.
+ - [x] [백준 트리순회](https://www.acmicpc.net/problem/1991)
+ - [ ] [백준 가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12013) 
+ - [ ] [백준 병든 나이트](https://www.acmicpc.net/problem/1783) 
+
+
+#### WEEK 7.
+ - [x] [백준 숫자카드](https://www.acmicpc.net/problem/2591)
+ - [x] [백준 Z](https://www.acmicpc.net/problem/1074) 
+
+#### WEEK 8.
+ - [ ] [백준 중량 제한](https://www.acmicpc.net/problem/1939)
+ - [ ] [백준 기타레슨](https://www.acmicpc.net/problem/2343) 
+>>>>>>> 77f87eec8593c43ae848c4ce35066de0a977d221
