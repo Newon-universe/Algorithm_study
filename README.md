@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-### :star: [Newon](https://github.com/Newon-universe)'s Algorithm
-<td align="Center">
- <a href="https://github.com/Newon-universe">
-  <img src="https://avatars.githubusercontent.com/u/80164141?s=400&u=18dbe14cc4d456edf912784cf89299e68a973858&v=4" width="150px;"/></a>
- </br></br>
-</td>
-
-<img src="https://img.shields.io/badge/Kotlin-0095D5?style=flat-square&logo=kotlin&logoColor=white"> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=C&logoColor=white">
-
-#
-=======
 # Platinum-Study
 <span>
     <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=java&logoColor=white">
@@ -65,54 +53,16 @@
 [ **7회차**. 2021.10.31 - 11.06 ]
 ##### - [분할정복](Document/분할정복.md) (엘리나)
 ##### - 10815 숫자 카드 / 1074 Z
->>>>>>> 347ceb67e85f1e1289eca13aa993a51a1b8a0b8b
 
-#### WEEK 1.
- - [x] [백준 평균은 넘겠지](https://www.acmicpc.net/problem/4344)
- - [x] [백준 한수](https://www.acmicpc.net/problem/1065)
+</br>
 
-#### WEEK 2.
- - [x] [백준 팩토리얼 0의 개수](https://www.acmicpc.net/problem/1676)
- - [x] [백준 -2진수](https://www.acmicpc.net/problem/2089)
- - [x] [백준 2×n 타일링 2](https://www.acmicpc.net/problem/11727)
- - [x] [백준 1, 2, 3 더하기 3](https://www.acmicpc.net/problem/15988)
+[ **8회차**. 2021.11.07 - 11.13 ]
+##### - [이분탐색(이진탐색)과 정렬](Document/이분탐색(이진탐색)과%20정렬.md) (블랑코, 솔)
+##### - 1939 중량제한 / 2343 기타 레슨
 
-#### WEEK 3.
- - [x] [백준 1, 2, 3 더하기](https://www.acmicpc.net/problem/9095)
- - [x] [백준 N과 M (6)](https://www.acmicpc.net/problem/15655)
- - [x] [백준 다음 순열](https://www.acmicpc.net/problem/10972)
- - [ ] [백준 부등호](https://www.acmicpc.net/problem/2529)
- - [x] [백준 집합](https://www.acmicpc.net/problem/11723)
+</br>
 
-#### WEEK 4.
- - [x] [백준 N과 M (1)](https://www.acmicpc.net/problem/15649)
- - [x] [백준 스타트와 링크](https://www.acmicpc.net/problem/14889) 
- - [x] [백준 ABCDE](https://www.acmicpc.net/problem/13023)
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 ## Contributors
 <a href="https://github.com/Newon-universe/Algorithm_study/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Newon-universe/Algorithm_study" />
 </a>
->>>>>>> 347ceb67e85f1e1289eca13aa993a51a1b8a0b8b
-=======
-#### WEEK 5.
- - [x] [백준 DFS 와 BFS](https://www.acmicpc.net/problem/12609)
- - [x] [백준 이모티콘](https://www.acmicpc.net/problem/14226) 
-
-#### WEEK 6.
- - [x] [백준 트리순회](https://www.acmicpc.net/problem/1991)
- - [ ] [백준 가장 긴 증가하는 부분 수열](https://www.acmicpc.net/problem/12013) 
- - [ ] [백준 병든 나이트](https://www.acmicpc.net/problem/1783) 
-
-
-#### WEEK 7.
- - [x] [백준 숫자카드](https://www.acmicpc.net/problem/2591)
- - [x] [백준 Z](https://www.acmicpc.net/problem/1074) 
-
-#### WEEK 8.
- - [ ] [백준 중량 제한](https://www.acmicpc.net/problem/1939)
- - [ ] [백준 기타레슨](https://www.acmicpc.net/problem/2343) 
->>>>>>> 77f87eec8593c43ae848c4ce35066de0a977d221
